@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://88e6s457a670"]
+
+[ext_resource type="Script" path="res://scripts/BackToMenuButton.gd" id="1_sk1wu"]
+
+[node name="6amWin" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 253.0
+offset_right = 550.0
+offset_bottom = 276.0
+text = "6AM You Win"
+
+[node name="Back to Menu Button" type="Button" parent="."]
+offset_left = 383.0
+offset_top = 309.0
+offset_right = 605.0
+offset_bottom = 424.0
+text = "Back to Menu"
+script = ExtResource("1_sk1wu")
+
+[connection signal="pressed" from="Back to Menu Button" to="Back to Menu Button" method="_on_pressed"]
