@@ -1,20 +1,24 @@
 extends Node2D
 
+# Runs on start
 func _ready() -> void:
 	print(Global.start)
 	print("Char1 is at the: ", Global.Char1Pos)
 	$Timer.timeout.connect(timeout)
 
+# Movement Opportunity
 func timeout() -> void:
 	if randi_range(1,20) <= Global.AI["Char1"]:
 		print("Char1 moved.")
 		move()
 		print("Char1 is in: ", Global.Char1Pos)
 		
+		# Stop when they reach the door
 		if Global.Char1Pos == "door":
 			$Timer.stop()
 			print("Char1 is at the door.")
 
+# Movement path
 func move() -> void:
 		match Global.Char1Pos:
 			"start":
