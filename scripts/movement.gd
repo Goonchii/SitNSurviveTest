@@ -2,7 +2,6 @@ extends Node2D
 
 # Runs on start
 func _ready() -> void:
-	print(Global.start)
 	print("Char1 is at the: ", Global.Char1Pos)
 	$Timer.timeout.connect(timeout)
 
