@@ -1,9 +1,24 @@
 extends Node
 
 var AI = {
-	"Char1": [1,1,1,1,1],
-	"Char2": [1,2,3,4,5]
+	"Char1": [20,1,1,1,1],
+	"Char2": [20,2,3,4,5]
 }
+var night_schedule = {
+	1: ["Char1"],
+	2: ["Char2"],
+	3: [],
+	4: [],
+	5: []
+}
+var hostile_schedule = {
+	1: [12,1,2,3,4,5],
+	2: [],
+	3: [],
+	4: [],
+	5: []
+}
+var all_active_chars = []
 var completedNights = [false, false, false, false, false]
 var currentNight = 1
 
@@ -52,3 +67,24 @@ func night_completed():
 		# Save and update the current night to the next one
 		save_data()
 		currentNight = get_next_night()
+
+func activate_chars():
+	all_active_chars.clear()
+	var chars_active = night_schedule.get(currentNight, [])
+	for character in get_tree().get_nodes_in_group("Characters"):
+		var timer = character.get_node("Timer")
+		if character.name in chars_active:
+			character.visible = true
+			character.set_process(true)
+			timer.start()
+			all_active_chars.append(character)
+			print(character, " is active.")
+		else:
+			character.visible = false
+			character.set_process(false)
+			timer.stop()
+			print(character, "is disabled.")
+
+# WIP finish after active chars
+func pick_random_hostile():
+	print("A character is now hostile.")
