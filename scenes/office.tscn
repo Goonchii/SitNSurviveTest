@@ -1,21 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=5 format=3 uid="uid://b5w43eb767h57"]
 
-[ext_resource type="Script" path="res://scripts/movement.gd" id="1_u4xte"]
-[ext_resource type="Script" path="res://scripts/testcharacter.gd" id="2_ou7di"]
-[ext_resource type="Script" path="res://scripts/time.gd" id="3_jlpy7"]
+[ext_resource type="Script" uid="uid://dygy0k4cbhw4h" path="res://scripts/office.gd" id="1_7jj4f"]
+[ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
+[ext_resource type="Script" uid="uid://3ctoqg5upbkx" path="res://scripts/Char2AI.gd" id="2_ou7di"]
+[ext_resource type="Script" uid="uid://dadhb1ppmelft" path="res://scripts/time.gd" id="3_jlpy7"]
 
 [node name="Office" type="Node2D"]
+script = ExtResource("1_7jj4f")
 
-[node name="Char1 AI" type="Node2D" parent="."]
+[node name="Char1" type="Node2D" parent="." groups=["Characters"]]
 script = ExtResource("1_u4xte")
 
-[node name="Timer" type="Timer" parent="Char1 AI"]
+[node name="Timer" type="Timer" parent="Char1"]
 autostart = true
 
-[node name="Char2 AI" type="Node2D" parent="."]
+[node name="Char2" type="Node2D" parent="." groups=["Characters"]]
 script = ExtResource("2_ou7di")
 
-[node name="Timer" type="Timer" parent="Char2 AI"]
+[node name="Timer" type="Timer" parent="Char2"]
 autostart = true
 
 [node name="Time" type="Label" parent="."]
@@ -29,3 +31,4 @@ horizontal_alignment = 2
 script = ExtResource("3_jlpy7")
 
 [node name="Timer" type="Timer" parent="Time"]
+wait_time = 10.0
