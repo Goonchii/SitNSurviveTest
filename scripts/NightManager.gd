@@ -54,7 +54,7 @@ func check_hostile_triggers():
 	triggers_done[time.nightTime] = used_triggers
 	print("Triggers done: ", triggers_done)
 
-# WIP finish after active chars
+# Pick a random active, non hostile character to become hostile
 func pick_random_hostile():
 	# Check for active characters who arent already hostile
 	var candidates = []
