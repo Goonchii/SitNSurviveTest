@@ -1,17 +1,19 @@
 extends Label
 
+@onready var night_manager = get_node("../NightManager")
 var nightTime = 12
-var triggers_done = []
 
 func _ready() -> void:
 	$Timer.timeout.connect(timeout)
 	$Timer.start()
-
-func start_night():
 	nightTime = 12
-	triggers_done.clear()
-	timeout()
-	$Timer.start
+	
+	night_manager.triggers_done.clear()
+	night_manager.reset_all_characters()
+	night_manager.activate_chars()
+	night_manager.check_hostile_triggers()
+	print("Active chars: ", night_manager.all_active_chars)
+	print("It is night ", Global.currentNight)
 
 func timeout() -> void:
 	nightTime += 1
@@ -19,14 +21,9 @@ func timeout() -> void:
 		nightTime = 1
 	text = str(nightTime, "AM")
 	print("Time is: ", nightTime, "AM")
-	
-	if Global.hostile_schedule.has(Global.currentNight) and nightTime in Global.hostile_schedule[Global.currentNight]:
-		if nightTime not in triggers_done:
-			Global.pick_random_hostile()
-			triggers_done.append(nightTime)
-			print("Triggers done: ", triggers_done)
+	night_manager.check_hostile_triggers()
 	
 	if nightTime == 6:
 		get_tree().change_scene_to_file("res://scenes/6AM Win.tscn")
 		Global.night_completed()
-		triggers_done.clear()
+		night_manager.triggers_done.clear()
