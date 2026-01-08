@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://88e6s457a670"]
 
-[ext_resource type="Script" path="res://scripts/BackToMenuButton.gd" id="1_sk1wu"]
+[ext_resource type="Script" uid="uid://bsn8s27a5c3lf" path="res://scripts/back_to_menu_button.gd" id="1_sk1wu"]
 
 [node name="6amWin" type="Node2D"]
 
