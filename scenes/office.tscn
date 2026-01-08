@@ -1,12 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=12 format=3 uid="uid://b5w43eb767h57"]
 
-[ext_resource type="Script" uid="uid://dygy0k4cbhw4h" path="res://scripts/office.gd" id="1_7jj4f"]
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
 [ext_resource type="Script" uid="uid://3ctoqg5upbkx" path="res://scripts/Char2AI.gd" id="2_ou7di"]
+[ext_resource type="Script" uid="uid://b6j3urt4mwsgh" path="res://scripts/NightManager.gd" id="2_qphb6"]
 [ext_resource type="Script" uid="uid://dadhb1ppmelft" path="res://scripts/time.gd" id="3_jlpy7"]
+[ext_resource type="Script" uid="uid://cp3o6fwonxad8" path="res://scripts/button_controls.gd" id="5_2knxt"]
+[ext_resource type="Texture2D" uid="uid://bwb5xsnmq5prn" path="res://assets/shock_button1.png" id="6_fmddn"]
+[ext_resource type="Script" uid="uid://b5xj03cvskhb3" path="res://scripts/shock_button.gd" id="7_gdafm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in4ui"]
+atlas = ExtResource("6_fmddn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hbky"]
+atlas = ExtResource("6_fmddn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o23kw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in4ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hbky")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2knxt"]
+size = Vector2(15.255814, 15.348837)
 
 [node name="Office" type="Node2D"]
-script = ExtResource("1_7jj4f")
+
+[node name="NightManager" type="Node2D" parent="."]
+script = ExtResource("2_qphb6")
 
 [node name="Char1" type="Node2D" parent="." groups=["Characters"]]
 script = ExtResource("1_u4xte")
@@ -32,3 +62,22 @@ script = ExtResource("3_jlpy7")
 
 [node name="Timer" type="Timer" parent="Time"]
 wait_time = 10.0
+
+[node name="ButtonControls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("5_2knxt")
+
+[node name="ShockButton" type="AnimatedSprite2D" parent="ButtonControls"]
+texture_filter = 1
+position = Vector2(562, 494)
+scale = Vector2(10.75, 10.75)
+sprite_frames = SubResource("SpriteFrames_o23kw")
+frame_progress = 0.4830835
+script = ExtResource("7_gdafm")
+
+[node name="CollisionShape2D" type="Area2D" parent="ButtonControls/ShockButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonControls/ShockButton/CollisionShape2D"]
+position = Vector2(0, -0.046512604)
+shape = SubResource("RectangleShape2D_2knxt")
