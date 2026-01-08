@@ -69,8 +69,8 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -250.0
 offset_top = 32.0
-offset_right = 250.0
-offset_bottom = 532.0
+offset_right = 50.0
+offset_bottom = 432.0
 grow_horizontal = 2
 script = ExtResource("8_fmddn")
 
