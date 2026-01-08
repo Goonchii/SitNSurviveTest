@@ -1,37 +1,48 @@
 extends Node2D
 
-var Char1Pos = "start"
+var char_position = "start"
 var state = "normal"
 
 func _ready() -> void:
-	print("Char1 is at the: ", Char1Pos)
+	print("Char1 is at the: ", char_position)
 	print("Char1 AI lvl is ", Global.AI["Char1"][Global.currentNight - 1])
 	$Timer.timeout.connect(timeout)
 
 # Movement Opportunity
 func timeout() -> void:
 	if randi_range(1,20) <= Global.AI["Char1"][Global.currentNight - 1]:
-		print("Char1 moved.")
 		move()
-		print("Char1 is in: ", Char1Pos)
-		
-		# Stop when they reach the door
-		if Char1Pos == "door":
-			$Timer.stop()
-			print("Char1 is at the door.")
+		print("Char1 moved to: ", char_position)
+	
+	if char_position == "office":
+		print("Char1 attacks.")
+		Global.player_dies()
+		return
 
 # Movement path
 func move() -> void:
-		match Char1Pos:
+	# When faulty
+	if state == "hostile":
+		match char_position:
 			"start":
-				Char1Pos = ["room1", "room2"].pick_random()
-			"room1":
-				Char1Pos = ["room3", "room4"].pick_random()
-			"room2":
-				Char1Pos = ["room5", "door"].pick_random()
+				char_position = ["room3"].pick_random()
 			"room3":
-				Char1Pos = ["room2"].pick_random()
-			"room4":
-				Char1Pos = ["room2"].pick_random()
-			"room5":
-				Char1Pos = ["room2"].pick_random()
+				char_position = ["room2"].pick_random()
+			"room2":
+				char_position = ["room1"].pick_random()
+			"room1":
+				char_position = ["room3", "office"].pick_random()
+	# When normal
+	else:
+		match char_position:
+			"start":
+				char_position = ["room1"].pick_random()
+			"room1":
+				char_position = ["room2"].pick_random()
+			"room2":
+				char_position = ["room3", "office"].pick_random()
+			"room3":
+				char_position = ["room1"].pick_random()
+			"office":
+				char_position = ["start"].pick_random()
+				
