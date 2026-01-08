@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7c40mole0p4s"]
+
+[ext_resource type="Script" uid="uid://bsn8s27a5c3lf" path="res://scripts/back_to_menu_button.gd" id="1_05mc5"]
+
+[node name="Lose" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 494.0
+offset_top = 192.0
+offset_right = 566.0
+offset_bottom = 215.0
+text = "You died."
+
+[node name="Back to Menu Button" type="Button" parent="."]
+offset_left = 383.0
+offset_top = 309.0
+offset_right = 605.0
+offset_bottom = 424.0
+text = "Back to Menu"
+script = ExtResource("1_05mc5")
+
+[connection signal="pressed" from="Back to Menu Button" to="Back to Menu Button" method="_on_pressed"]
