@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=9 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
 [ext_resource type="Script" uid="uid://3ctoqg5upbkx" path="res://scripts/Char2AI.gd" id="2_ou7di"]
 [ext_resource type="Script" uid="uid://b6j3urt4mwsgh" path="res://scripts/NightManager.gd" id="2_qphb6"]
 [ext_resource type="Script" uid="uid://dadhb1ppmelft" path="res://scripts/time.gd" id="3_jlpy7"]
+[ext_resource type="Texture2D" uid="uid://m2nejiyonrqw" path="res://assets/Buttons/ShockButtonOFF.png" id="5_2knxt"]
+[ext_resource type="Texture2D" uid="uid://w20fl61184de" path="res://assets/Buttons/ShockButtonON.png" id="6_fmddn"]
+[ext_resource type="Texture2D" uid="uid://cnlf2a7b3t1uf" path="res://assets/Buttons/ShockButtonHOVER.png" id="7_gdafm"]
 
 [sub_resource type="GDScript" id="GDScript_7jj4f"]
 script/source = "extends Control
@@ -37,7 +40,7 @@ horizontal_alignment = 2
 script = ExtResource("3_jlpy7")
 
 [node name="Timer" type="Timer" parent="Time"]
-wait_time = 10.0
+wait_time = 60.0
 
 [node name="ButtonControls" type="Control" parent="."]
 layout_mode = 3
@@ -45,9 +48,14 @@ anchors_preset = 0
 script = SubResource("GDScript_7jj4f")
 
 [node name="TextureButton" type="TextureButton" parent="ButtonControls"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 461.0
-offset_top = 249.0
-offset_right = 501.0
-offset_bottom = 289.0
+offset_left = 507.0
+offset_top = 481.0
+offset_right = 623.0
+offset_bottom = 597.0
+texture_normal = ExtResource("5_2knxt")
+texture_pressed = ExtResource("6_fmddn")
+texture_hover = ExtResource("7_gdafm")
 ignore_texture_size = true
+stretch_mode = 0
