@@ -5,4 +5,3 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/office.tscn")
-	$time.start_night()
