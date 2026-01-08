@@ -11,13 +11,15 @@ func _ready() -> void:
 # Movement Opportunity
 func timeout() -> void:
 	if randi_range(1,20) <= Global.AI["Char1"][Global.currentNight - 1]:
-		move()
+		# Kill player on next MO if in office
+		if char_position == "office":
+			print("Char1 attacks.")
+			Global.player_dies()
+			return
+		# Otherwise move normally
+		else:
+			move()
 		print("Char1 moved to: ", char_position)
-	
-	if char_position == "office":
-		print("Char1 attacks.")
-		Global.player_dies()
-		return
 
 # Movement path
 func move() -> void:
