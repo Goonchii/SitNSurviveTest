@@ -1,7 +1,7 @@
 extends Node2D
 
 var Char2Pos = "start"
-var Char2State = "normal"
+var state = "normal"
 
 func _ready() -> void:
 	print("Char2 is at the: ", Char2Pos)
@@ -15,15 +15,15 @@ func timeout() -> void:
 		move()
 		print("Char2 is in: ", Char2Pos)
 		
-		# WIP - Stop if in office and is faulty - will need to change when attacking implemented
-		if Char2Pos == "office" and Char2State == "faulty":
+		# WIP - Stop if in office and is hostile - will need to change when attacking implemented
+		if Char2Pos == "office" and state == "hostile":
 			$Timer.stop()
 			print("Char2 is faulty and in the office. Administer controlled shock.")
 
 # Movement path
 func move() -> void:
 	# When faulty
-	if Char2State == "faulty":
+	if state == "hostile":
 		match Char2Pos:
 			"start":
 				Char2Pos = ["room3"].pick_random()

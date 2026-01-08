@@ -1,6 +1,7 @@
 extends Node2D
 
 var Char1Pos = "start"
+var state = "normal"
 
 func _ready() -> void:
 	print("Char1 is at the: ", Char1Pos)
