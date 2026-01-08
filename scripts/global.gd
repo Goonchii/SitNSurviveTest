@@ -1,8 +1,8 @@
 extends Node
 
 var AI = {
-	"Char1": [20,1,1,1,1],
-	"Char2": [20,2,3,4,5]
+	"Char1": [1,1,1,1,1],
+	"Char2": [1,2,3,4,5]
 }
 var night_schedule = {
 	1: ["Char1", "Char2"],
@@ -67,3 +67,7 @@ func night_completed():
 		# Save and update the current night to the next one
 		save_data()
 		currentNight = get_next_night()
+
+func player_dies():
+	print("Player has died.")
+	get_tree().change_scene_to_file("res://scenes/Lose.tscn")
