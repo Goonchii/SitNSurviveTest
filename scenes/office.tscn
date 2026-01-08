@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=10 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
 [ext_resource type="Script" uid="uid://3ctoqg5upbkx" path="res://scripts/Char2AI.gd" id="2_ou7di"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://m2nejiyonrqw" path="res://assets/Buttons/ShockButtonOFF.png" id="5_2knxt"]
 [ext_resource type="Texture2D" uid="uid://w20fl61184de" path="res://assets/Buttons/ShockButtonON.png" id="6_fmddn"]
 [ext_resource type="Texture2D" uid="uid://cnlf2a7b3t1uf" path="res://assets/Buttons/ShockButtonHOVER.png" id="7_gdafm"]
+[ext_resource type="Script" uid="uid://c44iro3yeixsp" path="res://scripts/UI_window_test.gd" id="8_fmddn"]
 
 [sub_resource type="GDScript" id="GDScript_7jj4f"]
 script/source = "extends Control
@@ -50,12 +51,58 @@ script = SubResource("GDScript_7jj4f")
 [node name="TextureButton" type="TextureButton" parent="ButtonControls"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 507.0
-offset_top = 481.0
-offset_right = 623.0
-offset_bottom = 597.0
+offset_left = 924.0
+offset_top = 496.0
+offset_right = 1040.0
+offset_bottom = 612.0
 texture_normal = ExtResource("5_2knxt")
 texture_pressed = ExtResource("6_fmddn")
 texture_hover = ExtResource("7_gdafm")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 32.0
+offset_right = 250.0
+offset_bottom = 532.0
+grow_horizontal = 2
+script = ExtResource("8_fmddn")
+
+[node name="Drag_Button" type="Button" parent="CanvasLayer/PanelContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UI.exe"
+
+[node name="Close_Button" type="Button" parent="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Close"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+text = "lorem ipsum bla bla bla aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+fit_content = true
+
+[connection signal="button_down" from="CanvasLayer/PanelContainer/Drag_Button" to="CanvasLayer/PanelContainer" method="_on_drag_button_button_down"]
+[connection signal="button_up" from="CanvasLayer/PanelContainer/Drag_Button" to="CanvasLayer/PanelContainer" method="_on_drag_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/PanelContainer/VBoxContainer/HBoxContainer/Close_Button" to="CanvasLayer/PanelContainer" method="_on_close_button_button_up"]
