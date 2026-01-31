@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dasfnp51pki8x"]
+
+[ext_resource type="Texture2D" uid="uid://dmtucr8t8xbkt" path="res://assets/window texture.png" id="1_7vjm3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vjm3"]
+bg_color = Color(0.13725491, 0.37254903, 0.8745098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.12512475, 0.21561956, 0.7081052, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t7hk"]
+atlas = ExtResource("1_7vjm3")
+region = Rect2(16, 16, 9, 9)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ogi88"]
+texture = SubResource("AtlasTexture_1t7hk")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+
+[resource]
+Button/font_sizes/font_size = 11
+Button/styles/normal = SubResource("StyleBoxFlat_7vjm3")
+WindowPanel/base_type = &"PanelContainer"
+WindowPanel/styles/panel = SubResource("StyleBoxTexture_ogi88")
