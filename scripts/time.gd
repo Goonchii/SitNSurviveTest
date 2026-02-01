@@ -1,6 +1,6 @@
 extends Label
 
-@onready var night_manager = get_node("../NightManager")
+@onready var night_manager = get_node("/root/Office/NightManager")
 var nightTime = 12
 
 func _ready() -> void:

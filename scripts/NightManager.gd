@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var time = get_node("../Time")
+@onready var time = get_node("/root/Office/CanvasLayer/Control/PanelContainer2/HBoxContainer/Time")
 var all_active_chars = []
 var triggers_done := {}
 
