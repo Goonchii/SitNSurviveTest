@@ -1,7 +1,7 @@
 extends Node
 
 var AI = {
-	"Char1": [1,1,1,1,1],
+	"Char1": [5,1,1,1,1],
 	"Char2": [1,2,3,4,5]
 }
 var night_schedule = {

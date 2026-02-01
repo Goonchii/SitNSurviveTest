@@ -3,8 +3,9 @@ extends Node2D
 var char_position = "start"
 var state = "normal"
 
+@onready var log_panel = get_node("/root/Office/CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel2")
+
 func _ready() -> void:
-	print("Char1 is at the: ", char_position)
 	print("Char1 AI lvl is ", Global.AI["Char1"][Global.currentNight - 1])
 	$Timer.timeout.connect(timeout)
 
@@ -19,7 +20,8 @@ func timeout() -> void:
 		# Otherwise move normally
 		else:
 			move()
-		print("Char1 moved to: ", char_position)
+			print("Char1 moved to: ", char_position)
+			log_panel.add_log("Char1 moved to: " + str(char_position))
 
 # Movement path
 func move() -> void:

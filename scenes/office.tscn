@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=33 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
 [ext_resource type="Script" uid="uid://3ctoqg5upbkx" path="res://scripts/Char2AI.gd" id="2_ou7di"]
@@ -14,6 +14,8 @@
 [ext_resource type="FontFile" uid="uid://cbnx6i06yenpu" path="res://assets/windows-xp-title-trebuchet-ms-bold-10pt.otf.woff2" id="9_k578b"]
 [ext_resource type="Theme" uid="uid://cdwpgokllq5h2" path="res://themes/minimisebutton.tres" id="10_o23kw"]
 [ext_resource type="Theme" uid="uid://bqomi7wmaojcm" path="res://themes/closebutton.tres" id="12_ujkv6"]
+[ext_resource type="Script" uid="uid://b2bhs6xa6h38r" path="res://scripts/panel_2.gd" id="14_k578b"]
+[ext_resource type="Script" uid="uid://dx6lgi622jlv3" path="res://scripts/panel_container_4.gd" id="15_07d2k"]
 
 [sub_resource type="GDScript" id="GDScript_7jj4f"]
 script/source = "extends Control
@@ -157,6 +159,36 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5058824)
 theme_override_fonts/font = ExtResource("9_k578b")
 theme_override_font_sizes/font_size = 13
+text = "Logs"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(70, 90)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_07d2k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gnmmx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jp1e5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k578b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button2"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button2/VBoxContainer"]
+custom_minimum_size = Vector2(60, 70)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kviqm")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5058824)
+theme_override_fonts/font = ExtResource("9_k578b")
+theme_override_font_sizes/font_size = 13
 text = "Cams"
 horizontal_alignment = 1
 text_overrun_behavior = 3
@@ -188,7 +220,7 @@ theme = ExtResource("8_gdafm")
 [node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5176471)
-text = "Cams"
+text = "Logs"
 
 [node name="Control" type="Control" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(655, 0)
@@ -214,6 +246,115 @@ autowrap_mode = 1
 autowrap_trim_flags = 0
 icon_alignment = 1
 
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("14_k578b")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel2"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 0
+offset_top = -4.0
+offset_right = 742.0
+offset_bottom = 374.0
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel2/ScrollContainer/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="CanvasLayer/Control/PanelContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("8_gdafm")
+theme_type_variation = &"WindowPanel"
+script = ExtResource("15_07d2k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer4"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_07d2k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel"]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 737.0
+offset_bottom = 23.0
+mouse_filter = 2
+theme = ExtResource("8_gdafm")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5176471)
+text = "Cams"
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(655, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="MinimiseButton" type="Button" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme = ExtResource("10_o23kw")
+
+[node name="Close_Button" type="Button" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("12_ujkv6")
+autowrap_mode = 1
+autowrap_trim_flags = 0
+icon_alignment = 1
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("14_k578b")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel2"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 0
+offset_top = -4.0
+offset_right = 742.0
+offset_bottom = 374.0
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel2/ScrollContainer/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
 [node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_top = 412.0
@@ -236,7 +377,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_k578b")
 text = "Start"
 
 [node name="Button2" type="Button" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_k578b")
 theme_override_font_sizes/font_size = 13
@@ -245,10 +386,26 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_alkg7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3hjlj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3hjlj")
 toggle_mode = true
-text = "Cams"
+text = " Logs"
+alignment = 0
+text_overrun_behavior = 3
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_k578b")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_kviqm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_alkg7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3hjlj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3hjlj")
+toggle_mode = true
+text = " Cams"
+alignment = 0
+text_overrun_behavior = 3
 
 [node name="Control" type="Control" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(550, 0)
+custom_minimum_size = Vector2(530, 0)
 layout_mode = 2
 
 [node name="Time" type="Label" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
@@ -263,7 +420,10 @@ script = ExtResource("3_jlpy7")
 wait_time = 60.0
 
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button" to="CanvasLayer/Control/PanelContainer/PanelContainer3" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button2" to="CanvasLayer/Control/PanelContainer/PanelContainer4" method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel/HBoxContainer/HBoxContainer/MinimiseButton" to="CanvasLayer/Control/PanelContainer/PanelContainer3" method="_on_minimise_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel/HBoxContainer/HBoxContainer/Close_Button" to="CanvasLayer/Control/PanelContainer/PanelContainer3" method="_on_close_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/PanelContainer2/HBoxContainer/Button2" to="CanvasLayer/Control/PanelContainer/PanelContainer3" method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer/HBoxContainer/MinimiseButton" to="CanvasLayer/Control/PanelContainer/PanelContainer4" method="_on_minimise_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer/HBoxContainer/Close_Button" to="CanvasLayer/Control/PanelContainer/PanelContainer4" method="_on_close_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/Control/PanelContainer2/HBoxContainer/Button2" to="CanvasLayer/Control/PanelContainer/PanelContainer3" method="_on_button_2_toggled"]
+[connection signal="toggled" from="CanvasLayer/Control/PanelContainer2/HBoxContainer/Button3" to="CanvasLayer/Control/PanelContainer/PanelContainer4" method="_on_button_3_toggled"]
