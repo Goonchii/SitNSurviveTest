@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bqomi7wmaojcm"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bqomi7wmaojcm"]
 
 [ext_resource type="Texture2D" uid="uid://dmtucr8t8xbkt" path="res://assets/window texture.png" id="1_hr5en"]
+[ext_resource type="FontFile" uid="uid://cbnx6i06yenpu" path="res://assets/windows-xp-title-trebuchet-ms-bold-10pt.otf.woff2" id="1_kx7sk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kx7sk"]
 atlas = ExtResource("1_hr5en")
@@ -10,4 +11,5 @@ region = Rect2(315, 25, 21, 21)
 texture = SubResource("AtlasTexture_kx7sk")
 
 [resource]
+Button/fonts/font = ExtResource("1_kx7sk")
 Button/styles/normal = SubResource("StyleBoxTexture_qji07")

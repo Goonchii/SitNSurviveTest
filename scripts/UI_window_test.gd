@@ -6,9 +6,11 @@ var parent
 var offset
 
 func _gui_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			offset = get_local_mouse_position()
+	if event is InputEventMouseButton and event.pressed:
+		offset = get_local_mouse_position()
+		var drag_rect := Rect2(Vector2.ZERO, Vector2(size.x, 24))
+		
+		if drag_rect.has_point(offset):
 			isDragging = true
 
 func _ready():
