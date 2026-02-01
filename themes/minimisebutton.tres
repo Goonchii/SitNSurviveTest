@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cdwpgokllq5h2"]
+
+[ext_resource type="Texture2D" uid="uid://dmtucr8t8xbkt" path="res://assets/window texture.png" id="1_qwhpb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62sdx"]
+atlas = ExtResource("1_qwhpb")
+region = Rect2(271, 25, 21, 21)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26num"]
+texture = SubResource("AtlasTexture_62sdx")
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxTexture_26num")
