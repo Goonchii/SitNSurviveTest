@@ -3,6 +3,8 @@ extends Node2D
 var char_position = "start"
 var state = "normal"
 
+@onready var office_manager = get_node("/root/Office")
+
 func _ready() -> void:
 	print("Char2 is at the: ", char_position)
 	print("Char2 AI lvl is ", Global.AI["Char2"][Global.currentNight - 1])
@@ -37,7 +39,11 @@ func move() -> void:
 			"room2":
 				char_position = ["room1"].pick_random()
 			"room1":
-				char_position = ["room3", "office"].pick_random()
+				if office_manager.try_enter(self):
+					char_position = ["office"].pick_random()
+			"office":
+				char_position = ["start"].pick_random()
+				office_manager.leave(self)
 	# When normal
 	else:
 		match char_position:
@@ -48,7 +54,8 @@ func move() -> void:
 			"room2":
 				char_position = ["room3", "office"].pick_random()
 			"room3":
-				char_position = ["room1"].pick_random()
+				if office_manager.try_enter(self):
+					char_position = ["office"].pick_random()
 			"office":
 				char_position = ["start"].pick_random()
-				
+				office_manager.leave(self)
