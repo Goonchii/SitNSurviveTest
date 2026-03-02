@@ -52,7 +52,7 @@ func move() -> void:
 			"room1":
 				char_position = ["room2"].pick_random()
 			"room2":
-				char_position = ["room3", "office"].pick_random()
+				char_position = ["room3"].pick_random()
 			"room3":
 				if office_manager.try_enter(self):
 					char_position = ["office"].pick_random()
