@@ -8,13 +8,17 @@ func _ready() -> void:
 	print("Char2 AI lvl is ", Global.AI["Char2"][Global.currentNight - 1])
 	$Timer.timeout.connect(timeout)
 
+func reset_to_start():
+	char_position = "start"
+
 # Movement Opportunity
 func timeout() -> void:
 	if randi_range(1,20) <= Global.AI["Char2"][Global.currentNight - 1]:
 		# Kill player on next MO if in office
-		if char_position == "office":
+		if char_position == "office" && state == "hostile":
 			print("Char2 attacks.")
 			Global.player_dies()
+			reset_to_start()
 			return
 		# Otherwise move normally
 		else:

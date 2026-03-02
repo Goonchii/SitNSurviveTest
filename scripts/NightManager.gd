@@ -7,6 +7,7 @@ var triggers_done := {}
 func reset_all_characters():
 	for character in get_tree().get_nodes_in_group("Characters"):
 		character.state = "normal"
+		character.reset_to_start()
 	print("All characters have been reset to normal.")
 
 func activate_chars():
