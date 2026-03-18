@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=49 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://ci68s3ahg18kr" path="res://scripts/OfficeManager.gd" id="1_ja80a"]
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
@@ -21,6 +21,17 @@
 [ext_resource type="Script" uid="uid://b2bhs6xa6h38r" path="res://scripts/panel_2.gd" id="14_k578b"]
 [ext_resource type="Script" uid="uid://dx6lgi622jlv3" path="res://scripts/panel_container_4.gd" id="15_07d2k"]
 [ext_resource type="Script" uid="uid://dbawpka5ye2rc" path="res://scripts/temp_cams.gd" id="20_alkg7"]
+[ext_resource type="Texture2D" uid="uid://c8chqogiy5r18" path="res://assets/Stage BG.png" id="22_8ywr3"]
+[ext_resource type="Script" uid="uid://ckrqqy1qimxia" path="res://scripts/cam_button.gd" id="22_t1nwb"]
+[ext_resource type="Texture2D" uid="uid://brmgbljpj1ouy" path="res://assets/Cams Map.png" id="23_eet0l"]
+[ext_resource type="Texture2D" uid="uid://excko3lfsoxj" path="res://assets/Stage Bonnie.png" id="23_t1nwb"]
+[ext_resource type="Script" uid="uid://0ogmovu7tbki" path="res://scripts/room_buttons.gd" id="24_42gc7"]
+[ext_resource type="Texture2D" uid="uid://5edljs0tduut" path="res://assets/Stage Chica.png" id="24_uwvu6"]
+[ext_resource type="Texture2D" uid="uid://b8bbmoehtge" path="res://assets/Dining BG.png" id="28_gf52q"]
+[ext_resource type="Texture2D" uid="uid://bo6j4gf7t2bq0" path="res://assets/Backstage BG.png" id="29_fsavt"]
+[ext_resource type="Texture2D" uid="uid://8rtobw0o7u3j" path="res://assets/Kitchen BG.png" id="30_8pip0"]
+[ext_resource type="Texture2D" uid="uid://drjdimpfilbtu" path="res://assets/Left Hall BG.png" id="31_skov3"]
+[ext_resource type="Texture2D" uid="uid://c4pyvg55dxj6n" path="res://assets/Right Hall BG.png" id="32_wwlo0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gnmmx"]
 texture = ExtResource("8_k578b")
@@ -66,6 +77,9 @@ bg_color = Color(0.70188046, 0.81564856, 1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hjlj"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_8ywr3"]
+viewport_path = NodePath("CameraRooms/Stage")
+
 [node name="Office" type="Node2D"]
 script = ExtResource("1_ja80a")
 
@@ -103,6 +117,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" type="ColorRect" parent="CanvasLayer"]
 clip_contents = true
@@ -421,6 +436,134 @@ script = ExtResource("3_jlpy7")
 [node name="Timer" type="Timer" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer/Time"]
 wait_time = 60.0
 
+[node name="GUI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="CamButton" type="Button" parent="GUI"]
+offset_left = 314.0
+offset_top = 900.0
+offset_right = 1576.0
+offset_bottom = 1053.0
+text = "Hello Press me for cams :)"
+script = ExtResource("22_t1nwb")
+
+[node name="Monitor" type="CanvasLayer" parent="GUI"]
+follow_viewport_enabled = true
+
+[node name="CamFeed" type="TextureRect" parent="GUI/Monitor"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_8ywr3")
+
+[node name="Sprite2D" type="Sprite2D" parent="GUI/Monitor"]
+texture = ExtResource("23_eet0l")
+centered = false
+
+[node name="RoomButtons" type="Node" parent="GUI/Monitor"]
+script = ExtResource("24_42gc7")
+
+[node name="StageButton" type="Button" parent="GUI/Monitor/RoomButtons"]
+offset_left = 1537.0
+offset_top = 481.0
+offset_right = 1612.0
+offset_bottom = 525.0
+text = "Stage"
+
+[node name="DiningButton" type="Button" parent="GUI/Monitor/RoomButtons"]
+offset_left = 1549.0
+offset_top = 600.0
+offset_right = 1624.0
+offset_bottom = 644.0
+text = "Dining"
+
+[node name="BackstageButton" type="Button" parent="GUI/Monitor/RoomButtons"]
+offset_left = 1307.0
+offset_top = 615.0
+offset_right = 1394.0
+offset_bottom = 659.0
+text = "Backstage"
+
+[node name="KitchenButton" type="Button" parent="GUI/Monitor/RoomButtons"]
+offset_left = 1747.0
+offset_top = 817.0
+offset_right = 1822.0
+offset_bottom = 861.0
+text = "Kitchen"
+
+[node name="LeftHallButton" type="Button" parent="GUI/Monitor/RoomButtons"]
+offset_left = 1435.0
+offset_top = 801.0
+offset_right = 1517.0
+offset_bottom = 845.0
+text = "L Hallway"
+
+[node name="RightHallButton" type="Button" parent="GUI/Monitor/RoomButtons"]
+offset_left = 1615.0
+offset_top = 810.0
+offset_right = 1699.0
+offset_bottom = 854.0
+text = "R Hallway"
+
+[node name="CameraRooms" type="Node2D" parent="."]
+
+[node name="Stage" type="SubViewport" parent="CameraRooms"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Background" type="Sprite2D" parent="CameraRooms/Stage"]
+texture = ExtResource("22_8ywr3")
+centered = false
+
+[node name="Node" type="Node" parent="CameraRooms/Stage"]
+
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Stage/Node"]
+texture = ExtResource("23_t1nwb")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Stage/Node"]
+texture = ExtResource("24_uwvu6")
+centered = false
+
+[node name="Dining" type="SubViewport" parent="CameraRooms"]
+size = Vector2i(1920, 1080)
+
+[node name="Background" type="Sprite2D" parent="CameraRooms/Dining"]
+texture = ExtResource("28_gf52q")
+centered = false
+
+[node name="Backstage" type="SubViewport" parent="CameraRooms"]
+size = Vector2i(1920, 1080)
+
+[node name="Background" type="Sprite2D" parent="CameraRooms/Backstage"]
+texture = ExtResource("29_fsavt")
+centered = false
+
+[node name="Kitchen" type="SubViewport" parent="CameraRooms"]
+size = Vector2i(1920, 1080)
+
+[node name="Background" type="Sprite2D" parent="CameraRooms/Kitchen"]
+texture = ExtResource("30_8pip0")
+centered = false
+
+[node name="LeftHall" type="SubViewport" parent="CameraRooms"]
+size = Vector2i(1920, 1080)
+
+[node name="Background" type="Sprite2D" parent="CameraRooms/LeftHall"]
+texture = ExtResource("31_skov3")
+centered = false
+
+[node name="RightHall" type="SubViewport" parent="CameraRooms"]
+size = Vector2i(1920, 1080)
+
+[node name="Background" type="Sprite2D" parent="CameraRooms/RightHall"]
+texture = ExtResource("32_wwlo0")
+centered = false
+
 [connection signal="button_up" from="ButtonControls/TextureButton" to="ButtonControls" method="_on_texture_button_button_up"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button" to="CanvasLayer/Control/PanelContainer/PanelContainer3" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button2" to="CanvasLayer/Control/PanelContainer/PanelContainer4" method="_on_button_2_pressed"]
@@ -430,3 +573,10 @@ wait_time = 60.0
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer/HBoxContainer/Close_Button" to="CanvasLayer/Control/PanelContainer/PanelContainer4" method="_on_close_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/Control/PanelContainer2/HBoxContainer/Button2" to="CanvasLayer/Control/PanelContainer/PanelContainer3" method="_on_button_2_toggled"]
 [connection signal="toggled" from="CanvasLayer/Control/PanelContainer2/HBoxContainer/Button3" to="CanvasLayer/Control/PanelContainer/PanelContainer4" method="_on_button_3_toggled"]
+[connection signal="mouse_entered" from="GUI/CamButton" to="GUI/CamButton" method="_on_mouse_entered"]
+[connection signal="button_up" from="GUI/Monitor/RoomButtons/StageButton" to="GUI/Monitor/RoomButtons" method="_on_stage_button_button_up"]
+[connection signal="button_up" from="GUI/Monitor/RoomButtons/DiningButton" to="GUI/Monitor/RoomButtons" method="_on_dining_button_button_up"]
+[connection signal="button_up" from="GUI/Monitor/RoomButtons/BackstageButton" to="GUI/Monitor/RoomButtons" method="_on_backstage_button_button_up"]
+[connection signal="button_up" from="GUI/Monitor/RoomButtons/KitchenButton" to="GUI/Monitor/RoomButtons" method="_on_kitchen_button_button_up"]
+[connection signal="button_up" from="GUI/Monitor/RoomButtons/LeftHallButton" to="GUI/Monitor/RoomButtons" method="_on_left_hall_button_button_up"]
+[connection signal="button_up" from="GUI/Monitor/RoomButtons/RightHallButton" to="GUI/Monitor/RoomButtons" method="_on_right_hall_button_button_up"]
