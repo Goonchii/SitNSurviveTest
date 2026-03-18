@@ -11,13 +11,6 @@ var night_schedule = {
 	4: [],
 	5: []
 }
-var hostile_schedule = {
-	1: [12,1,2,3,4,5],
-	2: [12,12,12,1,1],
-	3: [1,3,5],
-	4: [],
-	5: []
-}
 var completedNights = [false, false, false, false, false]
 var currentNight = 1
 

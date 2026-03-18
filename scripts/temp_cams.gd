@@ -7,7 +7,6 @@ func _process(_float) -> void:
 	update_cams()
 
 func update_cams():
-	if Char1.state == "hostile":
-		match Char1.char_position:
-			"start":
-				self.visible = true
+	match Char1.char_position:
+		"start":
+			self.visible = true
