@@ -3,7 +3,7 @@ extends Node2D
 var char_position = "start"
 
 @onready var log_panel = get_node("/root/Office/CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel2")
-@onready var office_manager = get_node("/root/Office")
+## @onready var office_manager = get_node("/root/Office")
 
 func _ready() -> void:
 	print("Char1 AI lvl is ", Global.AI["Char1"][Global.currentNight - 1])
@@ -37,8 +37,8 @@ func move() -> void:
 			"room2":
 				char_position = ["room3"].pick_random()
 			"room3":
-				if office_manager.try_enter(self):
+				## if office_manager.try_enter(self):
 					char_position = ["office"].pick_random()
 			"office":
 				char_position = ["start"].pick_random()
-				office_manager.leave(self)
+				## office_manager.leave(self)
