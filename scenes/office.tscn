@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=50 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://ci68s3ahg18kr" path="res://scripts/OfficeManager.gd" id="1_ja80a"]
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
@@ -25,6 +25,9 @@
 [ext_resource type="Script" uid="uid://ckrqqy1qimxia" path="res://scripts/cam_button.gd" id="22_t1nwb"]
 [ext_resource type="Texture2D" uid="uid://brmgbljpj1ouy" path="res://assets/Cams Map.png" id="23_eet0l"]
 [ext_resource type="Script" uid="uid://0ogmovu7tbki" path="res://scripts/room_buttons.gd" id="24_42gc7"]
+[ext_resource type="Script" uid="uid://fjc6u74qltdc" path="res://scripts/cams_sprite_manager.gd" id="25_42gc7"]
+[ext_resource type="Texture2D" uid="uid://excko3lfsoxj" path="res://assets/Stage Bonnie.png" id="27_gf52q"]
+[ext_resource type="Texture2D" uid="uid://5edljs0tduut" path="res://assets/Stage Chica.png" id="28_fsavt"]
 [ext_resource type="Texture2D" uid="uid://b8bbmoehtge" path="res://assets/Dining BG.png" id="28_gf52q"]
 [ext_resource type="Texture2D" uid="uid://bo6j4gf7t2bq0" path="res://assets/Backstage BG.png" id="29_fsavt"]
 [ext_resource type="Texture2D" uid="uid://8rtobw0o7u3j" path="res://assets/Kitchen BG.png" id="30_8pip0"]
@@ -88,12 +91,14 @@ script = ExtResource("2_qphb6")
 script = ExtResource("1_u4xte")
 
 [node name="Timer" type="Timer" parent="Char1"]
+wait_time = 3.0
 autostart = true
 
 [node name="Char2" type="Node2D" parent="." groups=["Characters"]]
 script = ExtResource("2_ou7di")
 
 [node name="Timer" type="Timer" parent="Char2"]
+wait_time = 3.0
 autostart = true
 
 [node name="ButtonControls" type="Control" parent="."]
@@ -508,7 +513,20 @@ offset_right = 1699.0
 offset_bottom = 854.0
 text = "R Hallway"
 
-[node name="CameraRooms" type="Node2D" parent="."]
+[node name="CameraRooms" type="Node2D" parent="." node_paths=PackedStringArray("char1_stage", "char1_dining", "char1_backstage", "char1_kitchen", "char1_lefthall", "char1_righthall", "char2_stage", "char2_dining", "char2_backstage", "char2_kitchen", "char2_lefthall", "char2_righthall")]
+script = ExtResource("25_42gc7")
+char1_stage = NodePath("Stage/Char1")
+char1_dining = NodePath("Dining/Char1")
+char1_backstage = NodePath("Backstage/Char1")
+char1_kitchen = NodePath("Kitchen/Char1")
+char1_lefthall = NodePath("LeftHall/Char1")
+char1_righthall = NodePath("RightHall/Char1")
+char2_stage = NodePath("Stage/Char2")
+char2_dining = NodePath("Dining/Char2")
+char2_backstage = NodePath("Backstage/Char2")
+char2_kitchen = NodePath("Kitchen/Char2")
+char2_lefthall = NodePath("LeftHall/Char2")
+char2_righthall = NodePath("RightHall/Char2")
 
 [node name="Stage" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
@@ -516,6 +534,16 @@ render_target_update_mode = 4
 
 [node name="Background" type="Sprite2D" parent="CameraRooms/Stage"]
 texture = ExtResource("22_8ywr3")
+centered = false
+
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Stage"]
+visible = false
+texture = ExtResource("27_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Stage"]
+visible = false
+texture = ExtResource("28_fsavt")
 centered = false
 
 [node name="Dining" type="SubViewport" parent="CameraRooms"]
@@ -526,12 +554,28 @@ render_target_update_mode = 4
 texture = ExtResource("28_gf52q")
 centered = false
 
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Dining"]
+texture = ExtResource("27_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Dining"]
+texture = ExtResource("28_fsavt")
+centered = false
+
 [node name="Backstage" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Background" type="Sprite2D" parent="CameraRooms/Backstage"]
 texture = ExtResource("29_fsavt")
+centered = false
+
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Backstage"]
+texture = ExtResource("27_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Backstage"]
+texture = ExtResource("28_fsavt")
 centered = false
 
 [node name="Kitchen" type="SubViewport" parent="CameraRooms"]
@@ -542,6 +586,14 @@ render_target_update_mode = 4
 texture = ExtResource("30_8pip0")
 centered = false
 
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Kitchen"]
+texture = ExtResource("27_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Kitchen"]
+texture = ExtResource("28_fsavt")
+centered = false
+
 [node name="LeftHall" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
@@ -550,12 +602,28 @@ render_target_update_mode = 4
 texture = ExtResource("31_skov3")
 centered = false
 
+[node name="Char1" type="Sprite2D" parent="CameraRooms/LeftHall"]
+texture = ExtResource("27_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/LeftHall"]
+texture = ExtResource("28_fsavt")
+centered = false
+
 [node name="RightHall" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Background" type="Sprite2D" parent="CameraRooms/RightHall"]
 texture = ExtResource("32_wwlo0")
+centered = false
+
+[node name="Char1" type="Sprite2D" parent="CameraRooms/RightHall"]
+texture = ExtResource("27_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/RightHall"]
+texture = ExtResource("28_fsavt")
 centered = false
 
 [connection signal="button_up" from="ButtonControls/TextureButton" to="ButtonControls" method="_on_texture_button_button_up"]
