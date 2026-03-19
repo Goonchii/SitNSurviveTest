@@ -1,31 +1,30 @@
 extends Node
 
-@onready var camera_feed: TextureRect = get_node("/root/Office/GUI/Monitor/CamFeed")
+@export var camera_feed: TextureRect
 
-@onready var cam_stage: SubViewport = get_node("/root/Office/CameraRooms/Stage")
-@onready var cam_dining: SubViewport = get_node("/root/Office/CameraRooms/Dining")
-@onready var cam_backstage: SubViewport = get_node("/root/Office/CameraRooms/Backstage")
-@onready var cam_kitchen: SubViewport = get_node("/root/Office/CameraRooms/Kitchen")
-@onready var cam_lefthall: SubViewport = get_node("/root/Office/CameraRooms/LeftHall")
-@onready var cam_righthall: SubViewport = get_node("/root/Office/CameraRooms/RightHall")
+func _ready() -> void:
+	switch_camera(0)
 
-func switch_camera(viewport: SubViewport):
-	camera_feed.texture = viewport.get_texture()
+func switch_camera(index: int):
+	var paths = [
+		"/root/Office/CameraRooms/Stage",
+		"/root/Office/CameraRooms/Dining",
+		"/root/Office/CameraRooms/Backstage",
+		"/root/Office/CameraRooms/Kitchen",
+		"/root/Office/CameraRooms/LeftHall",
+        "/root/Office/CameraRooms/RightHall"
+	]
+	(camera_feed.texture as ViewportTexture).viewport_path = paths[index]
 
 func _on_stage_button_button_up() -> void:
-	switch_camera(cam_stage)
-
+	switch_camera(0)
 func _on_dining_button_button_up() -> void:
-	switch_camera(cam_dining)
-
+	switch_camera(1)
 func _on_backstage_button_button_up() -> void:
-	switch_camera(cam_backstage)
-
+	switch_camera(2)
 func _on_kitchen_button_button_up() -> void:
-	switch_camera(cam_kitchen)
-	
+	switch_camera(3)
 func _on_left_hall_button_button_up() -> void:
-	switch_camera(cam_lefthall)
-
+	switch_camera(4)
 func _on_right_hall_button_button_up() -> void:
-	switch_camera(cam_righthall)
+	switch_camera(5)
