@@ -1,6 +1,6 @@
 extends Node2D
 
-var char_position = "start"
+var char_position = "stage"
 
 @onready var log_panel = get_node("/root/Office/CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel2")
 ## @onready var office_manager = get_node("/root/Office")
@@ -10,7 +10,7 @@ func _ready() -> void:
 	$Timer.timeout.connect(timeout)
 
 func reset_to_start():
-	char_position = "start"
+	char_position = "stage"
 
 # Movement Opportunity
 func timeout() -> void:
@@ -30,15 +30,15 @@ func timeout() -> void:
 # Movement path
 func move() -> void:
 		match char_position:
-			"start":
-				char_position = ["room1"].pick_random()
-			"room1":
-				char_position = ["room2"].pick_random()
-			"room2":
-				char_position = ["room3"].pick_random()
-			"room3":
+			"stage":
+				char_position = ["dining"].pick_random()
+			"dining":
+				char_position = ["backstage"].pick_random()
+			"backstage":
+				char_position = ["lefthall"].pick_random()
+			"lefthall":
 				## if office_manager.try_enter(self):
 					char_position = ["office"].pick_random()
 			"office":
-				char_position = ["start"].pick_random()
+				char_position = ["stage"].pick_random()
 				## office_manager.leave(self)
