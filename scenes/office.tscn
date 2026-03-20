@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=25 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://ci68s3ahg18kr" path="res://scripts/OfficeManager.gd" id="1_ja80a"]
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b6j3urt4mwsgh" path="res://scripts/NightManager.gd" id="2_qphb6"]
 [ext_resource type="Script" uid="uid://dadhb1ppmelft" path="res://scripts/time.gd" id="3_jlpy7"]
 [ext_resource type="Texture2D" uid="uid://m2nejiyonrqw" path="res://assets/Buttons/ShockButtonOFF.png" id="5_2knxt"]
+[ext_resource type="Script" uid="uid://yqr87ml6op5c" path="res://scripts/Freddy.gd" id="5_3hjlj"]
 [ext_resource type="Script" uid="uid://ckjwcqmemp6fe" path="res://scripts/shock_button_controls.gd" id="5_alkg7"]
 [ext_resource type="Texture2D" uid="uid://w20fl61184de" path="res://assets/Buttons/ShockButtonON.png" id="6_fmddn"]
 [ext_resource type="Texture2D" uid="uid://cnlf2a7b3t1uf" path="res://assets/Buttons/ShockButtonHOVER.png" id="7_gdafm"]
@@ -15,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://5edljs0tduut" path="res://assets/Cams/Stage/Stage Chica.png" id="16_uwvu6"]
 [ext_resource type="Texture2D" uid="uid://b8bbmoehtge" path="res://assets/Cams/Dining/Dining BG.png" id="17_alkg7"]
 [ext_resource type="Texture2D" uid="uid://bo6j4gf7t2bq0" path="res://assets/Cams/Backstage/Backstage BG.png" id="18_3hjlj"]
+[ext_resource type="Texture2D" uid="uid://b1rjviwirfn8o" path="res://assets/Cams/Stage/Stage Freddy.png" id="18_qg43x"]
 [ext_resource type="Texture2D" uid="uid://8rtobw0o7u3j" path="res://assets/Cams/Kitchen/Kitchen BG.png" id="19_qg43x"]
 [ext_resource type="Texture2D" uid="uid://drjdimpfilbtu" path="res://assets/Cams/LeftHall/Left Hall BG.png" id="20_8ywr3"]
 [ext_resource type="Texture2D" uid="uid://c4pyvg55dxj6n" path="res://assets/Cams/RightHall/Right Hall BG.png" id="21_t1nwb"]
@@ -45,6 +47,13 @@ script = ExtResource("2_ou7di")
 wait_time = 3.0
 autostart = true
 
+[node name="Freddy" type="Node2D" parent="." groups=["Characters"]]
+script = ExtResource("5_3hjlj")
+
+[node name="Timer" type="Timer" parent="Freddy"]
+wait_time = 3.0
+autostart = true
+
 [node name="GUI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
@@ -61,7 +70,7 @@ script = ExtResource("3_jlpy7")
 [node name="Timer" type="Timer" parent="GUI/Time"]
 wait_time = 60.0
 
-[node name="ButtonControls" type="Control" parent="GUI"]
+[node name="ShockButtonControls" type="Control" parent="GUI"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("5_alkg7")
@@ -91,7 +100,6 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Monitor" type="CanvasLayer" parent="GUI"]
-visible = false
 follow_viewport_enabled = true
 
 [node name="CamFeed" type="TextureRect" parent="GUI/Monitor"]
@@ -161,7 +169,7 @@ offset_bottom = 1053.0
 text = "Hello Press me for cams :)"
 script = ExtResource("22_t1nwb")
 
-[node name="CameraRooms" type="Node2D" parent="." node_paths=PackedStringArray("char1_stage", "char1_dining", "char1_backstage", "char1_kitchen", "char1_lefthall", "char1_righthall", "char2_stage", "char2_dining", "char2_backstage", "char2_kitchen", "char2_lefthall", "char2_righthall")]
+[node name="CameraRooms" type="Node2D" parent="." node_paths=PackedStringArray("char1_stage", "char1_dining", "char1_backstage", "char1_kitchen", "char1_lefthall", "char1_righthall", "char2_stage", "char2_dining", "char2_backstage", "char2_kitchen", "char2_lefthall", "char2_righthall", "freddy_stage", "freddy_dining", "freddy_backstage", "freddy_kitchen", "freddy_lefthall", "freddy_righthall")]
 script = ExtResource("25_42gc7")
 char1_stage = NodePath("Stage/Char1")
 char1_dining = NodePath("Dining/Char1")
@@ -175,6 +183,12 @@ char2_backstage = NodePath("Backstage/Char2")
 char2_kitchen = NodePath("Kitchen/Char2")
 char2_lefthall = NodePath("LeftHall/Char2")
 char2_righthall = NodePath("RightHall/Char2")
+freddy_stage = NodePath("Stage/Freddy")
+freddy_dining = NodePath("Dining/Freddy")
+freddy_backstage = NodePath("Backstage/Freddy")
+freddy_kitchen = NodePath("Kitchen/Freddy")
+freddy_lefthall = NodePath("LeftHall/Freddy")
+freddy_righthall = NodePath("RightHall/Freddy")
 
 [node name="Stage" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
@@ -190,6 +204,10 @@ centered = false
 
 [node name="Char2" type="Sprite2D" parent="CameraRooms/Stage"]
 texture = ExtResource("16_uwvu6")
+centered = false
+
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Stage"]
+texture = ExtResource("18_qg43x")
 centered = false
 
 [node name="Dining" type="SubViewport" parent="CameraRooms"]
@@ -208,6 +226,10 @@ centered = false
 texture = ExtResource("16_uwvu6")
 centered = false
 
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Dining"]
+texture = ExtResource("18_qg43x")
+centered = false
+
 [node name="Backstage" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
@@ -222,6 +244,10 @@ centered = false
 
 [node name="Char2" type="Sprite2D" parent="CameraRooms/Backstage"]
 texture = ExtResource("16_uwvu6")
+centered = false
+
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Backstage"]
+texture = ExtResource("18_qg43x")
 centered = false
 
 [node name="Kitchen" type="SubViewport" parent="CameraRooms"]
@@ -240,6 +266,10 @@ centered = false
 texture = ExtResource("16_uwvu6")
 centered = false
 
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Kitchen"]
+texture = ExtResource("18_qg43x")
+centered = false
+
 [node name="LeftHall" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
@@ -254,6 +284,10 @@ centered = false
 
 [node name="Char2" type="Sprite2D" parent="CameraRooms/LeftHall"]
 texture = ExtResource("16_uwvu6")
+centered = false
+
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/LeftHall"]
+texture = ExtResource("18_qg43x")
 centered = false
 
 [node name="RightHall" type="SubViewport" parent="CameraRooms"]
@@ -272,8 +306,12 @@ centered = false
 texture = ExtResource("16_uwvu6")
 centered = false
 
-[connection signal="button_up" from="GUI/LShockButton" to="GUI/ButtonControls" method="_on_l_shock_button_button_up"]
-[connection signal="button_up" from="GUI/RShockButton" to="GUI/ButtonControls" method="_on_r_shock_button_button_up"]
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/RightHall"]
+texture = ExtResource("18_qg43x")
+centered = false
+
+[connection signal="button_up" from="GUI/LShockButton" to="GUI/ShockButtonControls" method="_on_l_shock_button_button_up"]
+[connection signal="button_up" from="GUI/RShockButton" to="GUI/ShockButtonControls" method="_on_r_shock_button_button_up"]
 [connection signal="button_up" from="GUI/Monitor/StageButton" to="GUI/Monitor/RoomButtons" method="_on_stage_button_button_up"]
 [connection signal="button_up" from="GUI/Monitor/DiningButton" to="GUI/Monitor/RoomButtons" method="_on_dining_button_button_up"]
 [connection signal="button_up" from="GUI/Monitor/BackstageButton" to="GUI/Monitor/RoomButtons" method="_on_backstage_button_button_up"]
