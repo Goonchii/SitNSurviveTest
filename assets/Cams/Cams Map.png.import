@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://excko3lfsoxj"
-path="res://.godot/imported/Stage Bonnie.png-0e54ddaefbde19bf1c9d04b43dd7d669.ctex"
+uid="uid://brmgbljpj1ouy"
+path="res://.godot/imported/Cams Map.png-4714adbf898d40337e1409170742c041.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Stage Bonnie.png"
-dest_files=["res://.godot/imported/Stage Bonnie.png-0e54ddaefbde19bf1c9d04b43dd7d669.ctex"]
+source_file="res://assets/Cams/Cams Map.png"
+dest_files=["res://.godot/imported/Cams Map.png-4714adbf898d40337e1409170742c041.ctex"]
 
 [params]
 

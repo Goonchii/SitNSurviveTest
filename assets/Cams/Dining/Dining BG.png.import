@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4pyvg55dxj6n"
-path="res://.godot/imported/Right Hall BG.png-a4c42c27eea7b78c8f37083ffb751dcf.ctex"
+uid="uid://b8bbmoehtge"
+path="res://.godot/imported/Dining BG.png-6bf99fac696b5f8a2a47d03e2d855815.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Right Hall BG.png"
-dest_files=["res://.godot/imported/Right Hall BG.png-a4c42c27eea7b78c8f37083ffb751dcf.ctex"]
+source_file="res://assets/Cams/Dining/Dining BG.png"
+dest_files=["res://.godot/imported/Dining BG.png-6bf99fac696b5f8a2a47d03e2d855815.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brmgbljpj1ouy"
-path="res://.godot/imported/Cams Map.png-0158e00e73cafb136ea044b9aad4a695.ctex"
+uid="uid://8rtobw0o7u3j"
+path="res://.godot/imported/Kitchen BG.png-a105e73a52253250614f5c8193db2e0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cams Map.png"
-dest_files=["res://.godot/imported/Cams Map.png-0158e00e73cafb136ea044b9aad4a695.ctex"]
+source_file="res://assets/Cams/Kitchen/Kitchen BG.png"
+dest_files=["res://.godot/imported/Kitchen BG.png-a105e73a52253250614f5c8193db2e0d.ctex"]
 
 [params]
 

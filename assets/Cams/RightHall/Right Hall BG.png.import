@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8chqogiy5r18"
-path="res://.godot/imported/Stage BG.png-cf511de730aa787816a54368f44a0881.ctex"
+uid="uid://c4pyvg55dxj6n"
+path="res://.godot/imported/Right Hall BG.png-91bd9963314f9335cb271e09938eeffb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Stage BG.png"
-dest_files=["res://.godot/imported/Stage BG.png-cf511de730aa787816a54368f44a0881.ctex"]
+source_file="res://assets/Cams/RightHall/Right Hall BG.png"
+dest_files=["res://.godot/imported/Right Hall BG.png-91bd9963314f9335cb271e09938eeffb.ctex"]
 
 [params]
 

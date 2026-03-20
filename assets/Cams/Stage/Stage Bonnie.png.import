@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8bbmoehtge"
-path="res://.godot/imported/Dining BG.png-caccfc0b0a62884ec19dea6d8ba3db9b.ctex"
+uid="uid://excko3lfsoxj"
+path="res://.godot/imported/Stage Bonnie.png-a213ac163fdc7d4abce7235298b4495b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dining BG.png"
-dest_files=["res://.godot/imported/Dining BG.png-caccfc0b0a62884ec19dea6d8ba3db9b.ctex"]
+source_file="res://assets/Cams/Stage/Stage Bonnie.png"
+dest_files=["res://.godot/imported/Stage Bonnie.png-a213ac163fdc7d4abce7235298b4495b.ctex"]
 
 [params]
 

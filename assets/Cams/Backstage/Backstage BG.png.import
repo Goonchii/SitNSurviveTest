@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5edljs0tduut"
-path="res://.godot/imported/Stage Chica.png-55f05daddb06aaeac05783cea1ac031f.ctex"
+uid="uid://bo6j4gf7t2bq0"
+path="res://.godot/imported/Backstage BG.png-18aeaac4f55367b1115798e06e9f9420.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Stage Chica.png"
-dest_files=["res://.godot/imported/Stage Chica.png-55f05daddb06aaeac05783cea1ac031f.ctex"]
+source_file="res://assets/Cams/Backstage/Backstage BG.png"
+dest_files=["res://.godot/imported/Backstage BG.png-18aeaac4f55367b1115798e06e9f9420.ctex"]
 
 [params]
 

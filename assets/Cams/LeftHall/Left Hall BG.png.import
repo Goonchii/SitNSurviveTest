@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8rtobw0o7u3j"
-path="res://.godot/imported/Kitchen BG.png-9185193195866d27fca994b7f66dc697.ctex"
+uid="uid://drjdimpfilbtu"
+path="res://.godot/imported/Left Hall BG.png-306d12e947d9062a4ed7da27fda8f9ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Kitchen BG.png"
-dest_files=["res://.godot/imported/Kitchen BG.png-9185193195866d27fca994b7f66dc697.ctex"]
+source_file="res://assets/Cams/LeftHall/Left Hall BG.png"
+dest_files=["res://.godot/imported/Left Hall BG.png-306d12e947d9062a4ed7da27fda8f9ae.ctex"]
 
 [params]
 

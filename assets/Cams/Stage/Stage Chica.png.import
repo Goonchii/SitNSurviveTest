@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drjdimpfilbtu"
-path="res://.godot/imported/Left Hall BG.png-0d65349732d56ad382d451b653d8797f.ctex"
+uid="uid://5edljs0tduut"
+path="res://.godot/imported/Stage Chica.png-5089ee1615c93adbe639e80b31f0cb4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Left Hall BG.png"
-dest_files=["res://.godot/imported/Left Hall BG.png-0d65349732d56ad382d451b653d8797f.ctex"]
+source_file="res://assets/Cams/Stage/Stage Chica.png"
+dest_files=["res://.godot/imported/Stage Chica.png-5089ee1615c93adbe639e80b31f0cb4c.ctex"]
 
 [params]
 
