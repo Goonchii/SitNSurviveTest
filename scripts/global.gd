@@ -63,3 +63,4 @@ func night_completed():
 
 func player_dies():
 	print("Player has died.")
+	get_tree().change_scene_to_file("res://scenes/Lose.tscn")
