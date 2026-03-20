@@ -2,7 +2,6 @@ extends Node2D
 
 var char_position = "stage"
 
-@onready var log_panel = get_node("/root/Office/CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel2")
 ## @onready var office_manager = get_node("/root/Office")
 
 func _ready() -> void:
@@ -25,7 +24,6 @@ func timeout() -> void:
 		else:
 			move()
 			print("Char1 moved to: ", char_position)
-			log_panel.add_log("Char1 moved to: " + str(char_position))
 
 # Movement path
 func move() -> void:
