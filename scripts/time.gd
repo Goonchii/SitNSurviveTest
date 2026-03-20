@@ -1,6 +1,7 @@
 extends Label
 
 @onready var night_manager = get_node("/root/Office/NightManager")
+@onready var shock_button_controls = get_node("/root/Office/GUI/ShockButtonControls")
 var nightTime = 12
 
 func _ready() -> void:
@@ -11,8 +12,10 @@ func _ready() -> void:
 	night_manager.triggers_done.clear()
 	night_manager.reset_all_characters()
 	night_manager.activate_chars()
+	shock_button_controls.shock_counter = 0
 	print("Active chars: ", night_manager.all_active_chars)
 	print("It is night ", Global.currentNight)
+	print("Shock counter set to: ", shock_button_controls.shock_counter)
 
 func timeout() -> void:
 	nightTime += 1
