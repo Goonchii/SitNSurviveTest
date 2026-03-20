@@ -2,10 +2,11 @@ extends Node
 
 var AI = {
 	"Char1": [5,1,1,1,1],
-	"Char2": [5,2,3,4,5]
+	"Char2": [5,2,3,4,5],
+	"Freddy": [5,5,5,5,5]
 }
 var night_schedule = {
-	1: ["Char1", "Char2"],
+	1: ["Char1", "Char2","Freddy"],
 	2: ["Char2"],
 	3: ["Char1"],
 	4: [],

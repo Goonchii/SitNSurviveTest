@@ -1,11 +1,47 @@
 extends Node2D
 
+var char_position = "stage"
 
-# Called when the node enters the scene tree for the first time.
+## @onready var office_manager = get_node("/root/Office")
+
 func _ready() -> void:
-	pass # Replace with function body.
+	print("Freddy AI lvl is ", Global.AI["Freddy"][Global.currentNight - 1])
+	$Timer.timeout.connect(timeout)
 
+func reset_to_start():
+	char_position = "stage"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+# Movement Opportunity
+func timeout() -> void:
+	if randi_range(1,20) <= Global.AI["Freddy"][Global.currentNight - 1]:
+		# Kill player on next MO if in office
+		if char_position == "office":
+			print("Freddy attacks.")
+			Global.player_dies()
+			reset_to_start()
+			return
+		# Otherwise move normally
+		else:
+			move()
+			print("Freddy moved to: ", char_position)
+
+# Movement path
+func move() -> void:
+		match char_position:
+			"stage":
+				char_position = ["dining"].pick_random()
+			"dining":
+				char_position = ["kitchen"].pick_random()
+			"kitchen":
+				char_position = ["righthall"].pick_random()
+			"righthall":
+				## if office_manager.try_enter(self):
+					char_position = ["office"].pick_random()
+			"office":
+				char_position = ["lefthall"].pick_random()
+				## office_manager.leave(self)
+			"lefthall":
+				char_position = ["backstage"].pick_random()
+			"backstage":
+					char_position = ["dining"].pick_random()
+				
