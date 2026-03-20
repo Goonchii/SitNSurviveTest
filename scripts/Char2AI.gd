@@ -23,7 +23,7 @@ func timeout() -> void:
 		# Otherwise move normally
 		else:
 			move()
-			print("Char1 moved to: ", char_position)
+			print("Char2 moved to: ", char_position)
 
 # Movement path
 func move() -> void:
