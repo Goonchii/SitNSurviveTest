@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=23 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://ci68s3ahg18kr" path="res://scripts/OfficeManager.gd" id="1_ja80a"]
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
@@ -9,74 +9,18 @@
 [ext_resource type="Script" uid="uid://ckjwcqmemp6fe" path="res://scripts/shock_button_controls.gd" id="5_alkg7"]
 [ext_resource type="Texture2D" uid="uid://w20fl61184de" path="res://assets/Buttons/ShockButtonON.png" id="6_fmddn"]
 [ext_resource type="Texture2D" uid="uid://cnlf2a7b3t1uf" path="res://assets/Buttons/ShockButtonHOVER.png" id="7_gdafm"]
-[ext_resource type="Script" uid="uid://c44iro3yeixsp" path="res://scripts/UI_window_test.gd" id="8_fmddn"]
-[ext_resource type="Theme" uid="uid://dasfnp51pki8x" path="res://themes/window.tres" id="8_gdafm"]
-[ext_resource type="Texture2D" uid="uid://dj7afd0en62fv" path="res://assets/this_computer.png" id="8_jp1e5"]
-[ext_resource type="Texture2D" uid="uid://cyf38a2n3hf3i" path="res://assets/Bliss_(Windows_XP).png" id="8_k578b"]
-[ext_resource type="Texture2D" uid="uid://dmtucr8t8xbkt" path="res://assets/window texture.png" id="9_07d2k"]
-[ext_resource type="FontFile" uid="uid://cbnx6i06yenpu" path="res://assets/windows-xp-title-trebuchet-ms-bold-10pt.otf.woff2" id="9_k578b"]
-[ext_resource type="Texture2D" uid="uid://cns2lgjfv85lc" path="res://assets/program.png" id="10_kviqm"]
-[ext_resource type="Theme" uid="uid://cdwpgokllq5h2" path="res://themes/minimisebutton.tres" id="10_o23kw"]
-[ext_resource type="Theme" uid="uid://bqomi7wmaojcm" path="res://themes/closebutton.tres" id="12_ujkv6"]
-[ext_resource type="Script" uid="uid://b2bhs6xa6h38r" path="res://scripts/panel_2.gd" id="14_k578b"]
-[ext_resource type="Script" uid="uid://dx6lgi622jlv3" path="res://scripts/panel_container_4.gd" id="15_07d2k"]
-[ext_resource type="Script" uid="uid://dbawpka5ye2rc" path="res://scripts/temp_cams.gd" id="20_alkg7"]
-[ext_resource type="Texture2D" uid="uid://c8chqogiy5r18" path="res://assets/Stage BG.png" id="22_8ywr3"]
+[ext_resource type="Texture2D" uid="uid://brmgbljpj1ouy" path="res://assets/Cams/Cams Map.png" id="11_qg43x"]
+[ext_resource type="Texture2D" uid="uid://c8chqogiy5r18" path="res://assets/Cams/Stage/Stage BG.png" id="14_8ywr3"]
+[ext_resource type="Texture2D" uid="uid://excko3lfsoxj" path="res://assets/Cams/Stage/Stage Bonnie.png" id="15_t1nwb"]
+[ext_resource type="Texture2D" uid="uid://5edljs0tduut" path="res://assets/Cams/Stage/Stage Chica.png" id="16_uwvu6"]
+[ext_resource type="Texture2D" uid="uid://b8bbmoehtge" path="res://assets/Cams/Dining/Dining BG.png" id="17_alkg7"]
+[ext_resource type="Texture2D" uid="uid://bo6j4gf7t2bq0" path="res://assets/Cams/Backstage/Backstage BG.png" id="18_3hjlj"]
+[ext_resource type="Texture2D" uid="uid://8rtobw0o7u3j" path="res://assets/Cams/Kitchen/Kitchen BG.png" id="19_qg43x"]
+[ext_resource type="Texture2D" uid="uid://drjdimpfilbtu" path="res://assets/Cams/LeftHall/Left Hall BG.png" id="20_8ywr3"]
+[ext_resource type="Texture2D" uid="uid://c4pyvg55dxj6n" path="res://assets/Cams/RightHall/Right Hall BG.png" id="21_t1nwb"]
 [ext_resource type="Script" uid="uid://ckrqqy1qimxia" path="res://scripts/cam_button.gd" id="22_t1nwb"]
-[ext_resource type="Texture2D" uid="uid://brmgbljpj1ouy" path="res://assets/Cams Map.png" id="23_eet0l"]
 [ext_resource type="Script" uid="uid://0ogmovu7tbki" path="res://scripts/room_buttons.gd" id="24_42gc7"]
 [ext_resource type="Script" uid="uid://fjc6u74qltdc" path="res://scripts/cams_sprite_manager.gd" id="25_42gc7"]
-[ext_resource type="Texture2D" uid="uid://excko3lfsoxj" path="res://assets/Stage Bonnie.png" id="27_gf52q"]
-[ext_resource type="Texture2D" uid="uid://5edljs0tduut" path="res://assets/Stage Chica.png" id="28_fsavt"]
-[ext_resource type="Texture2D" uid="uid://b8bbmoehtge" path="res://assets/Dining BG.png" id="28_gf52q"]
-[ext_resource type="Texture2D" uid="uid://bo6j4gf7t2bq0" path="res://assets/Backstage BG.png" id="29_fsavt"]
-[ext_resource type="Texture2D" uid="uid://8rtobw0o7u3j" path="res://assets/Kitchen BG.png" id="30_8pip0"]
-[ext_resource type="Texture2D" uid="uid://drjdimpfilbtu" path="res://assets/Left Hall BG.png" id="31_skov3"]
-[ext_resource type="Texture2D" uid="uid://c4pyvg55dxj6n" path="res://assets/Right Hall BG.png" id="32_wwlo0"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gnmmx"]
-texture = ExtResource("8_k578b")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07d2k"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnmmx"]
-bg_color = Color(0.27, 0.27, 0.27, 0.50980395)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp1e5"]
-bg_color = Color(1, 1, 1, 0.53333336)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k578b"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kviqm"]
-texture = ExtResource("8_jp1e5")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ja80a"]
-texture = ExtResource("10_kviqm")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k578b"]
-atlas = ExtResource("9_07d2k")
-region = Rect2(24, 285, 312, 26)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_07d2k"]
-texture = SubResource("AtlasTexture_k578b")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ja80a"]
-bg_color = Color(0, 0.3254902, 0.88235295, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k578b"]
-bg_color = Color(0.23529412, 0.68235296, 0.23529412, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kviqm"]
-bg_color = Color(3.8023293e-06, 0.22626963, 0.63791263, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alkg7"]
-bg_color = Color(0, 0.111999966, 0.32, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hjlj"]
-bg_color = Color(0.70188046, 0.81564856, 1, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hjlj"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_u5glt"]
 viewport_path = NodePath("CameraRooms/Dining")
@@ -101,354 +45,50 @@ script = ExtResource("2_ou7di")
 wait_time = 3.0
 autostart = true
 
-[node name="ButtonControls" type="Control" parent="."]
+[node name="GUI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Time" type="Label" parent="GUI"]
+offset_left = 1631.0
+offset_top = 38.0
+offset_right = 1846.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 72
+text = "12 AM"
+horizontal_alignment = 2
+script = ExtResource("3_jlpy7")
+
+[node name="Timer" type="Timer" parent="GUI/Time"]
+wait_time = 60.0
+
+[node name="ButtonControls" type="Control" parent="GUI"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("5_alkg7")
 
-[node name="TextureButton" type="TextureButton" parent="ButtonControls"]
+[node name="LShockButton" type="TextureButton" parent="GUI"]
 texture_filter = 1
-layout_mode = 0
-offset_left = 924.0
-offset_top = 496.0
-offset_right = 1040.0
-offset_bottom = 612.0
+offset_left = 238.0
+offset_top = 627.0
+offset_right = 354.0
+offset_bottom = 743.0
 texture_normal = ExtResource("5_2knxt")
 texture_pressed = ExtResource("6_fmddn")
 texture_hover = ExtResource("7_gdafm")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Control" type="ColorRect" parent="CanvasLayer"]
-clip_contents = true
-offset_left = 163.0
-offset_top = 80.0
-offset_right = 913.0
-offset_bottom = 512.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-color = Color(0.63008255, 0.8354871, 0.973978, 1)
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control"]
-custom_minimum_size = Vector2(0, 400)
-layout_mode = 0
-offset_right = 750.0
-offset_bottom = 412.0
-size_flags_vertical = 3
-
-[node name="TextureRect" type="Panel" parent="CanvasLayer/Control/PanelContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_gnmmx")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/TextureRect"]
-layout_mode = 0
-offset_right = 750.0
-offset_bottom = 431.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(70, 90)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_07d2k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_gnmmx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jp1e5")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k578b")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button"]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button/VBoxContainer"]
-custom_minimum_size = Vector2(60, 70)
-layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_kviqm")
-
-[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5058824)
-theme_override_fonts/font = ExtResource("9_k578b")
-theme_override_font_sizes/font_size = 13
-text = "Logs"
-horizontal_alignment = 1
-text_overrun_behavior = 3
-
-[node name="Button2" type="Button" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(70, 90)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_07d2k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_gnmmx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jp1e5")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_k578b")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button2"]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button2/VBoxContainer"]
-custom_minimum_size = Vector2(60, 70)
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxTexture_ja80a")
-
-[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button2/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5058824)
-theme_override_fonts/font = ExtResource("9_k578b")
-theme_override_font_sizes/font_size = 13
-text = "Cams"
-horizontal_alignment = 1
-text_overrun_behavior = 3
-
-[node name="PanelContainer3" type="PanelContainer" parent="CanvasLayer/Control/PanelContainer"]
-visible = false
-layout_mode = 2
-theme = ExtResource("8_gdafm")
-theme_type_variation = &"WindowPanel"
-script = ExtResource("8_fmddn")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer3"]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer"]
-custom_minimum_size = Vector2(0, 26)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_07d2k")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel"]
-layout_mode = 0
-offset_top = 3.0
-offset_right = 737.0
-offset_bottom = 23.0
-mouse_filter = 2
-theme = ExtResource("8_gdafm")
-
-[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5176471)
-text = "Logs"
-
-[node name="Control" type="Control" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel/HBoxContainer"]
-custom_minimum_size = Vector2(655, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 2
-
-[node name="MinimiseButton" type="Button" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(20, 0)
-layout_mode = 2
-theme = ExtResource("10_o23kw")
-
-[node name="Close_Button" type="Button" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme = ExtResource("12_ujkv6")
-autowrap_mode = 1
-autowrap_trim_flags = 0
-icon_alignment = 1
-
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer"]
-layout_mode = 2
-script = ExtResource("14_k578b")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel2"]
-custom_minimum_size = Vector2(0, 300)
-layout_mode = 0
-offset_top = -4.0
-offset_right = 742.0
-offset_bottom = 374.0
-
-[node name="Control" type="Control" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel2/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel2/ScrollContainer/Control"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 2
-
-[node name="PanelContainer4" type="PanelContainer" parent="CanvasLayer/Control/PanelContainer"]
-layout_mode = 2
-theme = ExtResource("8_gdafm")
-theme_type_variation = &"WindowPanel"
-script = ExtResource("15_07d2k")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer4"]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer"]
-custom_minimum_size = Vector2(0, 26)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_07d2k")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel"]
-layout_mode = 0
-offset_top = 3.0
-offset_right = 737.0
-offset_bottom = 23.0
-mouse_filter = 2
-theme = ExtResource("8_gdafm")
-
-[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5176471)
-text = "Cams"
-
-[node name="Control" type="Control" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer"]
-custom_minimum_size = Vector2(655, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 2
-
-[node name="MinimiseButton" type="Button" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(20, 0)
-layout_mode = 2
-theme = ExtResource("10_o23kw")
-
-[node name="Close_Button" type="Button" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme = ExtResource("12_ujkv6")
-autowrap_mode = 1
-autowrap_trim_flags = 0
-icon_alignment = 1
-
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer"]
-visible = false
-layout_mode = 2
-script = ExtResource("20_alkg7")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel2"]
-layout_mode = 0
-offset_right = 133.0
-offset_bottom = 40.0
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel2/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel2/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="Panel3" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel2/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="Panel4" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel2/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="Panel5" type="Panel" parent="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel2/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/Control"]
-custom_minimum_size = Vector2(700, 20)
-layout_mode = 0
-offset_top = 412.0
-offset_right = 835.0
-offset_bottom = 432.0
-size_flags_horizontal = 3
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ja80a")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PanelContainer2"]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Button" type="Button" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(70, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_k578b")
-theme_override_font_sizes/font_size = 13
-theme_override_styles/normal = SubResource("StyleBoxFlat_k578b")
-text = "Start"
-
-[node name="Button2" type="Button" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_k578b")
-theme_override_font_sizes/font_size = 13
-theme_override_styles/normal = SubResource("StyleBoxFlat_kviqm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_alkg7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3hjlj")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_3hjlj")
-toggle_mode = true
-text = " Logs"
-alignment = 0
-text_overrun_behavior = 3
-
-[node name="Button3" type="Button" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_k578b")
-theme_override_font_sizes/font_size = 13
-theme_override_styles/normal = SubResource("StyleBoxFlat_kviqm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_alkg7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3hjlj")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_3hjlj")
-toggle_mode = true
-text = " Cams"
-alignment = 0
-text_overrun_behavior = 3
-
-[node name="Control" type="Control" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(445, 0)
-layout_mode = 2
-
-[node name="Time" type="Label" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_k578b")
-theme_override_font_sizes/font_size = 13
-text = "12 AM"
-horizontal_alignment = 2
-script = ExtResource("3_jlpy7")
-
-[node name="Timer" type="Timer" parent="CanvasLayer/Control/PanelContainer2/HBoxContainer/Time"]
-wait_time = 60.0
-
-[node name="GUI" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="CamButton" type="Button" parent="GUI"]
-offset_left = 314.0
-offset_top = 900.0
-offset_right = 1576.0
-offset_bottom = 1053.0
-text = "Hello Press me for cams :)"
-script = ExtResource("22_t1nwb")
+[node name="RShockButton" type="TextureButton" parent="GUI"]
+texture_filter = 1
+offset_left = 1543.0
+offset_top = 642.0
+offset_right = 1659.0
+offset_bottom = 758.0
+texture_normal = ExtResource("5_2knxt")
+texture_pressed = ExtResource("6_fmddn")
+texture_hover = ExtResource("7_gdafm")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Monitor" type="CanvasLayer" parent="GUI"]
 visible = false
@@ -463,8 +103,8 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("ViewportTexture_u5glt")
 
-[node name="Sprite2D" type="Sprite2D" parent="GUI/Monitor"]
-texture = ExtResource("23_eet0l")
+[node name="Map" type="Sprite2D" parent="GUI/Monitor"]
+texture = ExtResource("11_qg43x")
 centered = false
 
 [node name="RoomButtons" type="Node" parent="GUI/Monitor" node_paths=PackedStringArray("camera_feed")]
@@ -513,6 +153,14 @@ offset_right = 1699.0
 offset_bottom = 854.0
 text = "R Hallway"
 
+[node name="CamButton" type="Button" parent="GUI"]
+offset_left = 314.0
+offset_top = 900.0
+offset_right = 1576.0
+offset_bottom = 1053.0
+text = "Hello Press me for cams :)"
+script = ExtResource("22_t1nwb")
+
 [node name="CameraRooms" type="Node2D" parent="." node_paths=PackedStringArray("char1_stage", "char1_dining", "char1_backstage", "char1_kitchen", "char1_lefthall", "char1_righthall", "char2_stage", "char2_dining", "char2_backstage", "char2_kitchen", "char2_lefthall", "char2_righthall")]
 script = ExtResource("25_42gc7")
 char1_stage = NodePath("Stage/Char1")
@@ -533,17 +181,15 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Background" type="Sprite2D" parent="CameraRooms/Stage"]
-texture = ExtResource("22_8ywr3")
+texture = ExtResource("14_8ywr3")
 centered = false
 
 [node name="Char1" type="Sprite2D" parent="CameraRooms/Stage"]
-visible = false
-texture = ExtResource("27_gf52q")
+texture = ExtResource("15_t1nwb")
 centered = false
 
 [node name="Char2" type="Sprite2D" parent="CameraRooms/Stage"]
-visible = false
-texture = ExtResource("28_fsavt")
+texture = ExtResource("16_uwvu6")
 centered = false
 
 [node name="Dining" type="SubViewport" parent="CameraRooms"]
@@ -551,15 +197,15 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Background" type="Sprite2D" parent="CameraRooms/Dining"]
-texture = ExtResource("28_gf52q")
+texture = ExtResource("17_alkg7")
 centered = false
 
 [node name="Char1" type="Sprite2D" parent="CameraRooms/Dining"]
-texture = ExtResource("27_gf52q")
+texture = ExtResource("15_t1nwb")
 centered = false
 
 [node name="Char2" type="Sprite2D" parent="CameraRooms/Dining"]
-texture = ExtResource("28_fsavt")
+texture = ExtResource("16_uwvu6")
 centered = false
 
 [node name="Backstage" type="SubViewport" parent="CameraRooms"]
@@ -567,15 +213,15 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Background" type="Sprite2D" parent="CameraRooms/Backstage"]
-texture = ExtResource("29_fsavt")
+texture = ExtResource("18_3hjlj")
 centered = false
 
 [node name="Char1" type="Sprite2D" parent="CameraRooms/Backstage"]
-texture = ExtResource("27_gf52q")
+texture = ExtResource("15_t1nwb")
 centered = false
 
 [node name="Char2" type="Sprite2D" parent="CameraRooms/Backstage"]
-texture = ExtResource("28_fsavt")
+texture = ExtResource("16_uwvu6")
 centered = false
 
 [node name="Kitchen" type="SubViewport" parent="CameraRooms"]
@@ -583,15 +229,15 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Background" type="Sprite2D" parent="CameraRooms/Kitchen"]
-texture = ExtResource("30_8pip0")
+texture = ExtResource("19_qg43x")
 centered = false
 
 [node name="Char1" type="Sprite2D" parent="CameraRooms/Kitchen"]
-texture = ExtResource("27_gf52q")
+texture = ExtResource("15_t1nwb")
 centered = false
 
 [node name="Char2" type="Sprite2D" parent="CameraRooms/Kitchen"]
-texture = ExtResource("28_fsavt")
+texture = ExtResource("16_uwvu6")
 centered = false
 
 [node name="LeftHall" type="SubViewport" parent="CameraRooms"]
@@ -599,15 +245,15 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Background" type="Sprite2D" parent="CameraRooms/LeftHall"]
-texture = ExtResource("31_skov3")
+texture = ExtResource("20_8ywr3")
 centered = false
 
 [node name="Char1" type="Sprite2D" parent="CameraRooms/LeftHall"]
-texture = ExtResource("27_gf52q")
+texture = ExtResource("15_t1nwb")
 centered = false
 
 [node name="Char2" type="Sprite2D" parent="CameraRooms/LeftHall"]
-texture = ExtResource("28_fsavt")
+texture = ExtResource("16_uwvu6")
 centered = false
 
 [node name="RightHall" type="SubViewport" parent="CameraRooms"]
@@ -615,30 +261,23 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Background" type="Sprite2D" parent="CameraRooms/RightHall"]
-texture = ExtResource("32_wwlo0")
+texture = ExtResource("21_t1nwb")
 centered = false
 
 [node name="Char1" type="Sprite2D" parent="CameraRooms/RightHall"]
-texture = ExtResource("27_gf52q")
+texture = ExtResource("15_t1nwb")
 centered = false
 
 [node name="Char2" type="Sprite2D" parent="CameraRooms/RightHall"]
-texture = ExtResource("28_fsavt")
+texture = ExtResource("16_uwvu6")
 centered = false
 
-[connection signal="button_up" from="ButtonControls/TextureButton" to="ButtonControls" method="_on_texture_button_button_up"]
-[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button" to="CanvasLayer/Control/PanelContainer/PanelContainer3" method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/TextureRect/HBoxContainer/VBoxContainer/Button2" to="CanvasLayer/Control/PanelContainer/PanelContainer4" method="_on_button_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel/HBoxContainer/HBoxContainer/MinimiseButton" to="CanvasLayer/Control/PanelContainer/PanelContainer3" method="_on_minimise_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/PanelContainer3/VBoxContainer/Panel/HBoxContainer/HBoxContainer/Close_Button" to="CanvasLayer/Control/PanelContainer/PanelContainer3" method="_on_close_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer/HBoxContainer/MinimiseButton" to="CanvasLayer/Control/PanelContainer/PanelContainer4" method="_on_minimise_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/PanelContainer/PanelContainer4/VBoxContainer/Panel/HBoxContainer/HBoxContainer/Close_Button" to="CanvasLayer/Control/PanelContainer/PanelContainer4" method="_on_close_button_pressed"]
-[connection signal="toggled" from="CanvasLayer/Control/PanelContainer2/HBoxContainer/Button2" to="CanvasLayer/Control/PanelContainer/PanelContainer3" method="_on_button_2_toggled"]
-[connection signal="toggled" from="CanvasLayer/Control/PanelContainer2/HBoxContainer/Button3" to="CanvasLayer/Control/PanelContainer/PanelContainer4" method="_on_button_3_toggled"]
-[connection signal="mouse_entered" from="GUI/CamButton" to="GUI/CamButton" method="_on_mouse_entered"]
+[connection signal="button_up" from="GUI/LShockButton" to="GUI/ButtonControls" method="_on_l_shock_button_button_up"]
+[connection signal="button_up" from="GUI/RShockButton" to="GUI/ButtonControls" method="_on_r_shock_button_button_up"]
 [connection signal="button_up" from="GUI/Monitor/StageButton" to="GUI/Monitor/RoomButtons" method="_on_stage_button_button_up"]
 [connection signal="button_up" from="GUI/Monitor/DiningButton" to="GUI/Monitor/RoomButtons" method="_on_dining_button_button_up"]
 [connection signal="button_up" from="GUI/Monitor/BackstageButton" to="GUI/Monitor/RoomButtons" method="_on_backstage_button_button_up"]
 [connection signal="button_up" from="GUI/Monitor/KitchenButton" to="GUI/Monitor/RoomButtons" method="_on_kitchen_button_button_up"]
 [connection signal="button_up" from="GUI/Monitor/LeftHallButton" to="GUI/Monitor/RoomButtons" method="_on_left_hall_button_button_up"]
 [connection signal="button_up" from="GUI/Monitor/RightHallButton" to="GUI/Monitor/RoomButtons" method="_on_right_hall_button_button_up"]
+[connection signal="mouse_entered" from="GUI/CamButton" to="GUI/CamButton" method="_on_mouse_entered"]
