@@ -8,20 +8,20 @@ var shock_counter = 0
 
 func _on_l_shock_button_button_up() -> void:
 	if freddy.char_position == "office":
-		print("Char2 attacks.")
+		print("Freddy attacks.")
 		Global.player_dies()
 		freddy.reset_to_start()
-	else: if char1.char_position == "lefthall":
+	else:
 		char1.reset_to_start()
 		shock_counter += 1
 		print("Shock counter set to: ", shock_counter)
 
 func _on_r_shock_button_button_up() -> void:
 	if freddy.char_position == "office":
-		print("Char2 attacks.")
+		print("Freddy attacks.")
 		Global.player_dies()
 		freddy.reset_to_start()
-	else: if char2.char_position == "righthall":
+	else:
 		char2.reset_to_start()
 		shock_counter += 1
 		print("Shock counter set to: ", shock_counter)
