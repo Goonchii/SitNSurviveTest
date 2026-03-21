@@ -2,6 +2,7 @@ extends Node2D
 
 var char_position = "stage"
 
+@onready var monitor_layer: CanvasLayer = get_node("/root/Office/GUI/Monitor")
 ## @onready var office_manager = get_node("/root/Office")
 
 func _ready() -> void:
@@ -15,7 +16,7 @@ func reset_to_start():
 func timeout() -> void:
 	if randi_range(1,20) <= Global.AI["Freddy"][Global.currentNight - 1]:
 		# Kill player on next MO if in office
-		if char_position == "office":
+		if char_position == "office" && monitor_layer.visible:
 			print("Freddy attacks.")
 			Global.player_dies()
 			reset_to_start()
