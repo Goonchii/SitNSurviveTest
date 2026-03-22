@@ -3,7 +3,8 @@ extends Node
 var AI = {
 	"Char1": [3,6,3,5,8],
 	"Char2": [2,3,7,6,9],
-	"Freddy": [0,1,2,3,4]
+	"Freddy": [0,1,2,3,4],
+	"Steven": [0,0,0,0,0]
 }
 var night_schedule = {
 	1: ["Char1","Char2","Freddy"],
