@@ -3,10 +3,12 @@ extends Node2D
 var char_position = "stage"
 
 @onready var monitor_layer: CanvasLayer = get_node("/root/Office/OfficeUI/Monitor")
+@onready var freddy_office: Sprite2D = get_node("/root/Office/OfficeUI/Freddy")
 ## @onready var office_manager = get_node("/root/Office")
 
 func _ready() -> void:
 	print("Freddy AI lvl is ", Global.AI["Freddy"][Global.currentNight - 1])
+	freddy_office.visible = false
 	$Timer.timeout.connect(timeout)
 
 func reset_to_start():
@@ -38,8 +40,10 @@ func move() -> void:
 			"righthall":
 				## if office_manager.try_enter(self):
 					char_position = ["office"].pick_random()
+					freddy_office.visible = true
 			"office":
 				char_position = ["lefthall"].pick_random()
+				freddy_office.visible = false
 				## office_manager.leave(self)
 			"lefthall":
 				char_position = ["backstage"].pick_random()
