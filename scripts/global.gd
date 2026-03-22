@@ -1,16 +1,16 @@
 extends Node
 
 var AI = {
-	"Char1": [5,1,1,1,1],
-	"Char2": [5,2,3,4,5],
-	"Freddy": [5,5,5,5,5]
+	"Char1": [3,6,3,5,8],
+	"Char2": [2,3,7,6,9],
+	"Freddy": [0,1,2,3,4]
 }
 var night_schedule = {
-	1: ["Freddy"],
-	2: ["Char2"],
-	3: ["Char1"],
-	4: [],
-	5: []
+	1: ["Char1","Char2","Freddy"],
+	2: ["Char1","Char2","Freddy"],
+	3: ["Char1","Char2","Freddy"],
+	4: ["Char1","Char2","Freddy"],
+	5: ["Char1","Char2","Freddy"]
 }
 var completedNights = [false, false, false, false, false]
 var currentNight = 1
