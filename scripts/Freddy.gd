@@ -2,7 +2,7 @@ extends Node2D
 
 var char_position = "stage"
 
-@onready var monitor_layer: CanvasLayer = get_node("/root/Office/GUI/Monitor")
+@onready var monitor_layer: CanvasLayer = get_node("/root/Office/OfficeUI/Monitor")
 ## @onready var office_manager = get_node("/root/Office")
 
 func _ready() -> void:

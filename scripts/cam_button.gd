@@ -1,6 +1,6 @@
 extends Button
 
-@onready var monitor_layer: CanvasLayer = get_node("/root/Office/GUI/Monitor")
+@onready var monitor_layer: CanvasLayer = get_node("/root/Office/OfficeUI/Monitor")
 @onready var freddy = get_node("/root/Office/Freddy")
 
 func _on_mouse_entered() -> void:

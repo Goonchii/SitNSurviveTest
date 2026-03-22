@@ -1,7 +1,7 @@
 extends Label
 
 @onready var night_manager = get_node("/root/Office/NightManager")
-@onready var shock_button_controls = get_node("/root/Office/GUI/ShockButtonControls")
+@onready var shock_button_controls = get_node("/root/Office/OfficeUI/ShockButtonControls")
 var nightTime = 12
 
 func _ready() -> void:

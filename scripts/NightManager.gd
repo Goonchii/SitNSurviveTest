@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var time = get_node("/root/Office/GUI/Time")
+@onready var time = get_node("/root/Office/OfficeUI/Time")
 var all_active_chars = []
 var triggers_done := {}
 
