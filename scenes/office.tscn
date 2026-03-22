@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=27 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://ci68s3ahg18kr" path="res://scripts/OfficeManager.gd" id="1_ja80a"]
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://m2nejiyonrqw" path="res://assets/Buttons/ShockButtonOFF.png" id="5_2knxt"]
 [ext_resource type="Script" uid="uid://yqr87ml6op5c" path="res://scripts/Freddy.gd" id="5_3hjlj"]
 [ext_resource type="Script" uid="uid://ckjwcqmemp6fe" path="res://scripts/shock_button_controls.gd" id="5_alkg7"]
+[ext_resource type="Texture2D" uid="uid://c8ude51r6ljat" path="res://assets/Office/BG.png" id="6_8ywr3"]
 [ext_resource type="Texture2D" uid="uid://w20fl61184de" path="res://assets/Buttons/ShockButtonON.png" id="6_fmddn"]
 [ext_resource type="Texture2D" uid="uid://cnlf2a7b3t1uf" path="res://assets/Buttons/ShockButtonHOVER.png" id="7_gdafm"]
 [ext_resource type="Texture2D" uid="uid://brmgbljpj1ouy" path="res://assets/Cams/Cams Map.png" id="11_qg43x"]
+[ext_resource type="Texture2D" uid="uid://uoyk2g0stb6f" path="res://assets/Buttons/ShockButtonCooldown.png" id="13_t1nwb"]
 [ext_resource type="Texture2D" uid="uid://c8chqogiy5r18" path="res://assets/Cams/Stage/Stage BG.png" id="14_8ywr3"]
 [ext_resource type="Texture2D" uid="uid://excko3lfsoxj" path="res://assets/Cams/Stage/Stage Bonnie.png" id="15_t1nwb"]
 [ext_resource type="Texture2D" uid="uid://5edljs0tduut" path="res://assets/Cams/Stage/Stage Chica.png" id="16_uwvu6"]
@@ -54,10 +56,18 @@ script = ExtResource("5_3hjlj")
 wait_time = 3.0
 autostart = true
 
-[node name="GUI" type="CanvasLayer" parent="."]
+[node name="OfficeUI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="Time" type="Label" parent="GUI"]
+[node name="OfficeBG" type="Sprite2D" parent="OfficeUI"]
+texture = ExtResource("6_8ywr3")
+centered = false
+
+[node name="Freddy" type="Sprite2D" parent="OfficeUI"]
+texture = ExtResource("18_qg43x")
+centered = false
+
+[node name="Time" type="Label" parent="OfficeUI"]
 offset_left = 1631.0
 offset_top = 38.0
 offset_right = 1846.0
@@ -67,42 +77,49 @@ text = "12 AM"
 horizontal_alignment = 2
 script = ExtResource("3_jlpy7")
 
-[node name="Timer" type="Timer" parent="GUI/Time"]
+[node name="Timer" type="Timer" parent="OfficeUI/Time"]
 wait_time = 60.0
 
-[node name="ShockButtonControls" type="Control" parent="GUI"]
+[node name="ShockButtonControls" type="Control" parent="OfficeUI"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("5_alkg7")
 
-[node name="LShockButton" type="TextureButton" parent="GUI"]
+[node name="CooldownTimer" type="Timer" parent="OfficeUI/ShockButtonControls"]
+wait_time = 8.0
+one_shot = true
+
+[node name="BShockButton" type="TextureButton" parent="OfficeUI"]
 texture_filter = 1
-offset_left = 238.0
-offset_top = 627.0
-offset_right = 354.0
-offset_bottom = 743.0
+offset_left = 267.0
+offset_top = 391.0
+offset_right = 383.0
+offset_bottom = 507.0
 texture_normal = ExtResource("5_2knxt")
 texture_pressed = ExtResource("6_fmddn")
 texture_hover = ExtResource("7_gdafm")
+texture_disabled = ExtResource("13_t1nwb")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="RShockButton" type="TextureButton" parent="GUI"]
+[node name="CShockButton" type="TextureButton" parent="OfficeUI"]
 texture_filter = 1
-offset_left = 1543.0
-offset_top = 642.0
-offset_right = 1659.0
-offset_bottom = 758.0
+offset_left = 267.0
+offset_top = 547.0
+offset_right = 383.0
+offset_bottom = 663.0
 texture_normal = ExtResource("5_2knxt")
 texture_pressed = ExtResource("6_fmddn")
 texture_hover = ExtResource("7_gdafm")
+texture_disabled = ExtResource("13_t1nwb")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Monitor" type="CanvasLayer" parent="GUI"]
+[node name="Monitor" type="CanvasLayer" parent="OfficeUI"]
+visible = false
 follow_viewport_enabled = true
 
-[node name="CamFeed" type="TextureRect" parent="GUI/Monitor"]
+[node name="CamFeed" type="TextureRect" parent="OfficeUI/Monitor"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -111,63 +128,55 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("ViewportTexture_u5glt")
 
-[node name="Map" type="Sprite2D" parent="GUI/Monitor"]
+[node name="Map" type="Sprite2D" parent="OfficeUI/Monitor"]
 texture = ExtResource("11_qg43x")
 centered = false
 
-[node name="RoomButtons" type="Node" parent="GUI/Monitor" node_paths=PackedStringArray("camera_feed")]
+[node name="RoomButtons" type="Node" parent="OfficeUI/Monitor" node_paths=PackedStringArray("camera_feed")]
 script = ExtResource("24_42gc7")
 camera_feed = NodePath("../CamFeed")
 
-[node name="StageButton" type="Button" parent="GUI/Monitor"]
+[node name="StageButton" type="Button" parent="OfficeUI/Monitor"]
 offset_left = 1537.0
 offset_top = 481.0
 offset_right = 1612.0
 offset_bottom = 525.0
 text = "Stage"
 
-[node name="DiningButton" type="Button" parent="GUI/Monitor"]
+[node name="DiningButton" type="Button" parent="OfficeUI/Monitor"]
 offset_left = 1549.0
 offset_top = 600.0
 offset_right = 1624.0
 offset_bottom = 644.0
 text = "Dining"
 
-[node name="BackstageButton" type="Button" parent="GUI/Monitor"]
+[node name="BackstageButton" type="Button" parent="OfficeUI/Monitor"]
 offset_left = 1307.0
 offset_top = 615.0
 offset_right = 1394.0
 offset_bottom = 659.0
 text = "Backstage"
 
-[node name="KitchenButton" type="Button" parent="GUI/Monitor"]
+[node name="KitchenButton" type="Button" parent="OfficeUI/Monitor"]
 offset_left = 1747.0
 offset_top = 817.0
 offset_right = 1822.0
 offset_bottom = 861.0
 text = "Kitchen"
 
-[node name="LeftHallButton" type="Button" parent="GUI/Monitor"]
+[node name="LeftHallButton" type="Button" parent="OfficeUI/Monitor"]
 offset_left = 1435.0
 offset_top = 801.0
 offset_right = 1517.0
 offset_bottom = 845.0
 text = "L Hallway"
 
-[node name="RightHallButton" type="Button" parent="GUI/Monitor"]
+[node name="RightHallButton" type="Button" parent="OfficeUI/Monitor"]
 offset_left = 1615.0
 offset_top = 810.0
 offset_right = 1699.0
 offset_bottom = 854.0
 text = "R Hallway"
-
-[node name="CamButton" type="Button" parent="GUI"]
-offset_left = 314.0
-offset_top = 900.0
-offset_right = 1576.0
-offset_bottom = 1053.0
-text = "Hello Press me for cams :)"
-script = ExtResource("22_t1nwb")
 
 [node name="CameraRooms" type="Node2D" parent="." node_paths=PackedStringArray("char1_stage", "char1_dining", "char1_backstage", "char1_kitchen", "char1_lefthall", "char1_righthall", "char2_stage", "char2_dining", "char2_backstage", "char2_kitchen", "char2_lefthall", "char2_righthall", "freddy_stage", "freddy_dining", "freddy_backstage", "freddy_kitchen", "freddy_lefthall", "freddy_righthall")]
 script = ExtResource("25_42gc7")
@@ -310,12 +319,26 @@ centered = false
 texture = ExtResource("18_qg43x")
 centered = false
 
-[connection signal="button_up" from="GUI/LShockButton" to="GUI/ShockButtonControls" method="_on_l_shock_button_button_up"]
-[connection signal="button_up" from="GUI/RShockButton" to="GUI/ShockButtonControls" method="_on_r_shock_button_button_up"]
-[connection signal="button_up" from="GUI/Monitor/StageButton" to="GUI/Monitor/RoomButtons" method="_on_stage_button_button_up"]
-[connection signal="button_up" from="GUI/Monitor/DiningButton" to="GUI/Monitor/RoomButtons" method="_on_dining_button_button_up"]
-[connection signal="button_up" from="GUI/Monitor/BackstageButton" to="GUI/Monitor/RoomButtons" method="_on_backstage_button_button_up"]
-[connection signal="button_up" from="GUI/Monitor/KitchenButton" to="GUI/Monitor/RoomButtons" method="_on_kitchen_button_button_up"]
-[connection signal="button_up" from="GUI/Monitor/LeftHallButton" to="GUI/Monitor/RoomButtons" method="_on_left_hall_button_button_up"]
-[connection signal="button_up" from="GUI/Monitor/RightHallButton" to="GUI/Monitor/RoomButtons" method="_on_right_hall_button_button_up"]
-[connection signal="mouse_entered" from="GUI/CamButton" to="GUI/CamButton" method="_on_mouse_entered"]
+[node name="TopUI" type="CanvasLayer" parent="."]
+
+[node name="CamButton" type="Button" parent="TopUI"]
+z_index = 1
+offset_left = 314.0
+offset_top = 900.0
+offset_right = 1576.0
+offset_bottom = 1053.0
+text = "Hello Press me for cams :)"
+script = ExtResource("22_t1nwb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="timeout" from="OfficeUI/ShockButtonControls/CooldownTimer" to="OfficeUI/ShockButtonControls" method="_on_cooldown_timer_timeout"]
+[connection signal="button_up" from="OfficeUI/BShockButton" to="OfficeUI/ShockButtonControls" method="_on_b_shock_button_button_up"]
+[connection signal="button_up" from="OfficeUI/CShockButton" to="OfficeUI/ShockButtonControls" method="_on_c_shock_button_button_up"]
+[connection signal="button_up" from="OfficeUI/Monitor/StageButton" to="OfficeUI/Monitor/RoomButtons" method="_on_stage_button_button_up"]
+[connection signal="button_up" from="OfficeUI/Monitor/DiningButton" to="OfficeUI/Monitor/RoomButtons" method="_on_dining_button_button_up"]
+[connection signal="button_up" from="OfficeUI/Monitor/BackstageButton" to="OfficeUI/Monitor/RoomButtons" method="_on_backstage_button_button_up"]
+[connection signal="button_up" from="OfficeUI/Monitor/KitchenButton" to="OfficeUI/Monitor/RoomButtons" method="_on_kitchen_button_button_up"]
+[connection signal="button_up" from="OfficeUI/Monitor/LeftHallButton" to="OfficeUI/Monitor/RoomButtons" method="_on_left_hall_button_button_up"]
+[connection signal="button_up" from="OfficeUI/Monitor/RightHallButton" to="OfficeUI/Monitor/RoomButtons" method="_on_right_hall_button_button_up"]
+[connection signal="mouse_entered" from="TopUI/CamButton" to="TopUI/CamButton" method="_on_mouse_entered"]
