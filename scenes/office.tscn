@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=30 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://ci68s3ahg18kr" path="res://scripts/OfficeManager.gd" id="1_ja80a"]
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://m2nejiyonrqw" path="res://assets/Buttons/ShockButtonOFF.png" id="5_2knxt"]
 [ext_resource type="Script" uid="uid://yqr87ml6op5c" path="res://scripts/Freddy.gd" id="5_3hjlj"]
 [ext_resource type="Script" uid="uid://ckjwcqmemp6fe" path="res://scripts/shock_button_controls.gd" id="5_alkg7"]
+[ext_resource type="Script" uid="uid://51hndhwh2ahd" path="res://scripts/Steven.gd" id="6_7i2nt"]
 [ext_resource type="Texture2D" uid="uid://c8ude51r6ljat" path="res://assets/Office/BG.png" id="6_8ywr3"]
 [ext_resource type="Texture2D" uid="uid://w20fl61184de" path="res://assets/Buttons/ShockButtonON.png" id="6_fmddn"]
 [ext_resource type="Texture2D" uid="uid://cnlf2a7b3t1uf" path="res://assets/Buttons/ShockButtonHOVER.png" id="7_gdafm"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://excko3lfsoxj" path="res://assets/Cams/Stage/Stage Bonnie.png" id="15_t1nwb"]
 [ext_resource type="Texture2D" uid="uid://5edljs0tduut" path="res://assets/Cams/Stage/Stage Chica.png" id="16_uwvu6"]
 [ext_resource type="Texture2D" uid="uid://b8bbmoehtge" path="res://assets/Cams/Dining/Dining BG.png" id="17_alkg7"]
+[ext_resource type="Shader" uid="uid://cbu0mw63jh41q" path="res://shaders/CameraFilter.gdshader" id="17_fw3ux"]
 [ext_resource type="Texture2D" uid="uid://bo6j4gf7t2bq0" path="res://assets/Cams/Backstage/Backstage BG.png" id="18_3hjlj"]
 [ext_resource type="Texture2D" uid="uid://b1rjviwirfn8o" path="res://assets/Cams/Stage/Stage Freddy.png" id="18_qg43x"]
 [ext_resource type="Texture2D" uid="uid://8rtobw0o7u3j" path="res://assets/Cams/Kitchen/Kitchen BG.png" id="19_qg43x"]
@@ -28,6 +30,26 @@
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_u5glt"]
 viewport_path = NodePath("CameraRooms/Dining")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g1ciw"]
+shader = ExtResource("17_fw3ux")
+shader_parameter/grain_intensity = 0.1
+shader_parameter/min_lum = 0.0
+shader_parameter/max_lum = 1.0
+shader_parameter/time_scale = 0.5
+shader_parameter/vignette_darkness = 0.090000004275
+shader_parameter/vignette_outer_radius = 0.56300002348262
+shader_parameter/vignette_inner_radius = 0.3600000171
+shader_parameter/scanline_intensity = 0.28400001349
+shader_parameter/barrel_distortion = 0.0
+shader_parameter/chromatic_aberration = 0.0010000000475
+shader_parameter/crt_vignette_power = 1.398000066405
+shader_parameter/pixel_resolution_x = 640
+shader_parameter/pixel_resolution_y = 480
+shader_parameter/enable_color_quantization = true
+shader_parameter/color_quant_steps = 42.8310019394725
+shader_parameter/warble_amount = 0.0
+shader_parameter/warble_speed = 0.0
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_ja80a")
@@ -55,6 +77,12 @@ script = ExtResource("5_3hjlj")
 [node name="Timer" type="Timer" parent="Freddy"]
 wait_time = 3.0
 autostart = true
+
+[node name="Steven" type="Node2D" parent="."]
+script = ExtResource("6_7i2nt")
+
+[node name="Timer" type="Timer" parent="Steven"]
+wait_time = 3.0
 
 [node name="OfficeUI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -116,7 +144,6 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Monitor" type="CanvasLayer" parent="OfficeUI"]
-visible = false
 follow_viewport_enabled = true
 
 [node name="CamFeed" type="TextureRect" parent="OfficeUI/Monitor"]
@@ -177,6 +204,15 @@ offset_top = 810.0
 offset_right = 1699.0
 offset_bottom = 854.0
 text = "R Hallway"
+
+[node name="ColorRect" type="ColorRect" parent="OfficeUI/Monitor"]
+material = SubResource("ShaderMaterial_g1ciw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="CameraRooms" type="Node2D" parent="." node_paths=PackedStringArray("char1_stage", "char1_dining", "char1_backstage", "char1_kitchen", "char1_lefthall", "char1_righthall", "char2_stage", "char2_dining", "char2_backstage", "char2_kitchen", "char2_lefthall", "char2_righthall", "freddy_stage", "freddy_dining", "freddy_backstage", "freddy_kitchen", "freddy_lefthall", "freddy_righthall")]
 script = ExtResource("25_42gc7")
@@ -329,8 +365,6 @@ offset_right = 1576.0
 offset_bottom = 1053.0
 text = "Hello Press me for cams :)"
 script = ExtResource("22_t1nwb")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="timeout" from="OfficeUI/ShockButtonControls/CooldownTimer" to="OfficeUI/ShockButtonControls" method="_on_cooldown_timer_timeout"]
 [connection signal="button_up" from="OfficeUI/BShockButton" to="OfficeUI/ShockButtonControls" method="_on_b_shock_button_button_up"]
