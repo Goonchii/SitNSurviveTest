@@ -4,7 +4,7 @@ extends Button
 @onready var freddy = get_node("/root/Office/Freddy")
 
 func _on_mouse_entered() -> void:
-	if freddy.char_position == "office":
+	if freddy.char_position == "office" && !monitor_layer.visible:
 		print("Char2 attacks.")
 		Global.player_dies()
 		freddy.reset_to_start()
