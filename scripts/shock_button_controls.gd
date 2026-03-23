@@ -17,7 +17,7 @@ func _on_b_shock_button_button_up() -> void:
 		Global.player_dies()
 		freddy.reset_to_start()
 		
-	else: if cooldown_ready:
+	else: if cooldown_ready && char1.char_position != "office":
 		cooldown_ready = false
 		b_shock_button.disabled = true
 		c_shock_button.disabled = true
@@ -37,7 +37,7 @@ func _on_c_shock_button_button_up() -> void:
 		Global.player_dies()
 		freddy.reset_to_start()
 		
-	else: if cooldown_ready:
+	else: if cooldown_ready && char2.char_position != "office":
 		cooldown_ready = false
 		b_shock_button.disabled = true
 		c_shock_button.disabled = true
