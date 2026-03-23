@@ -144,6 +144,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Monitor" type="CanvasLayer" parent="OfficeUI"]
+visible = false
 follow_viewport_enabled = true
 
 [node name="CamFeed" type="TextureRect" parent="OfficeUI/Monitor"]
