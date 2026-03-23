@@ -1,9 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=31 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://ci68s3ahg18kr" path="res://scripts/OfficeManager.gd" id="1_ja80a"]
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
 [ext_resource type="Script" uid="uid://3ctoqg5upbkx" path="res://scripts/Char2AI.gd" id="2_ou7di"]
-[ext_resource type="Script" uid="uid://b6j3urt4mwsgh" path="res://scripts/NightManager.gd" id="2_qphb6"]
 [ext_resource type="Script" uid="uid://dadhb1ppmelft" path="res://scripts/time.gd" id="3_jlpy7"]
 [ext_resource type="Texture2D" uid="uid://m2nejiyonrqw" path="res://assets/Buttons/ShockButtonOFF.png" id="5_2knxt"]
 [ext_resource type="Script" uid="uid://yqr87ml6op5c" path="res://scripts/Freddy.gd" id="5_3hjlj"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c8ude51r6ljat" path="res://assets/Office/BG.png" id="6_8ywr3"]
 [ext_resource type="Texture2D" uid="uid://w20fl61184de" path="res://assets/Buttons/ShockButtonON.png" id="6_fmddn"]
 [ext_resource type="Texture2D" uid="uid://cnlf2a7b3t1uf" path="res://assets/Buttons/ShockButtonHOVER.png" id="7_gdafm"]
+[ext_resource type="Texture2D" uid="uid://1pwijigft20u" path="res://assets/Cams/Stage/Stage Steven.png" id="8_7i2nt"]
 [ext_resource type="Texture2D" uid="uid://brmgbljpj1ouy" path="res://assets/Cams/Cams Map.png" id="11_qg43x"]
 [ext_resource type="Texture2D" uid="uid://uoyk2g0stb6f" path="res://assets/Buttons/ShockButtonCooldown.png" id="13_t1nwb"]
 [ext_resource type="Texture2D" uid="uid://c8chqogiy5r18" path="res://assets/Cams/Stage/Stage BG.png" id="14_8ywr3"]
@@ -28,34 +28,28 @@
 [ext_resource type="Script" uid="uid://0ogmovu7tbki" path="res://scripts/room_buttons.gd" id="24_42gc7"]
 [ext_resource type="Script" uid="uid://fjc6u74qltdc" path="res://scripts/cams_sprite_manager.gd" id="25_42gc7"]
 
+[sub_resource type="GDScript" id="GDScript_uwvu6"]
+script/source = "extends Node2D
+
+
+
+"
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_u5glt"]
 viewport_path = NodePath("CameraRooms/Dining")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g1ciw"]
 shader = ExtResource("17_fw3ux")
-shader_parameter/grain_intensity = 0.1
-shader_parameter/min_lum = 0.0
-shader_parameter/max_lum = 1.0
-shader_parameter/time_scale = 0.5
-shader_parameter/vignette_darkness = 0.090000004275
-shader_parameter/vignette_outer_radius = 0.56300002348262
-shader_parameter/vignette_inner_radius = 0.3600000171
-shader_parameter/scanline_intensity = 0.28400001349
-shader_parameter/barrel_distortion = 0.0
-shader_parameter/chromatic_aberration = 0.0010000000475
-shader_parameter/crt_vignette_power = 1.398000066405
-shader_parameter/pixel_resolution_x = 640
-shader_parameter/pixel_resolution_y = 480
-shader_parameter/enable_color_quantization = true
-shader_parameter/color_quant_steps = 42.8310019394725
-shader_parameter/warble_amount = 0.0
-shader_parameter/warble_speed = 0.0
+shader_parameter/pixel_size = 5.7110002237725
+shader_parameter/vhs_intensity = 0.590000028025
+shader_parameter/noise_intensity = 0.174000008265
+shader_parameter/opacity = 0.2890000137275
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_ja80a")
 
 [node name="NightManager" type="Node2D" parent="."]
-script = ExtResource("2_qphb6")
+script = SubResource("GDScript_uwvu6")
 
 [node name="Char1" type="Node2D" parent="." groups=["Characters"]]
 script = ExtResource("1_u4xte")
@@ -78,11 +72,13 @@ script = ExtResource("5_3hjlj")
 wait_time = 3.0
 autostart = true
 
-[node name="Steven" type="Node2D" parent="."]
+[node name="Steven" type="Node2D" parent="." groups=["Characters"]]
 script = ExtResource("6_7i2nt")
 
 [node name="Timer" type="Timer" parent="Steven"]
-wait_time = 3.0
+wait_time = 15.0
+
+[node name="PunishmentTimer" type="Timer" parent="Steven"]
 
 [node name="OfficeUI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -93,6 +89,10 @@ centered = false
 
 [node name="Freddy" type="Sprite2D" parent="OfficeUI"]
 texture = ExtResource("18_qg43x")
+centered = false
+
+[node name="Steven" type="Sprite2D" parent="OfficeUI"]
+texture = ExtResource("8_7i2nt")
 centered = false
 
 [node name="Time" type="Label" parent="OfficeUI"]
@@ -214,7 +214,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="CameraRooms" type="Node2D" parent="." node_paths=PackedStringArray("char1_stage", "char1_dining", "char1_backstage", "char1_kitchen", "char1_lefthall", "char1_righthall", "char2_stage", "char2_dining", "char2_backstage", "char2_kitchen", "char2_lefthall", "char2_righthall", "freddy_stage", "freddy_dining", "freddy_backstage", "freddy_kitchen", "freddy_lefthall", "freddy_righthall")]
+[node name="CameraRooms" type="Node2D" parent="." node_paths=PackedStringArray("char1_stage", "char1_dining", "char1_backstage", "char1_kitchen", "char1_lefthall", "char1_righthall", "char2_stage", "char2_dining", "char2_backstage", "char2_kitchen", "char2_lefthall", "char2_righthall", "freddy_stage", "freddy_dining", "freddy_backstage", "freddy_kitchen", "freddy_lefthall", "freddy_righthall", "steven_stage", "steven_dining", "steven_backstage", "steven_kitchen", "steven_lefthall", "steven_righthall")]
 script = ExtResource("25_42gc7")
 char1_stage = NodePath("Stage/Char1")
 char1_dining = NodePath("Dining/Char1")
@@ -234,6 +234,12 @@ freddy_backstage = NodePath("Backstage/Freddy")
 freddy_kitchen = NodePath("Kitchen/Freddy")
 freddy_lefthall = NodePath("LeftHall/Freddy")
 freddy_righthall = NodePath("RightHall/Freddy")
+steven_stage = NodePath("Stage/Steven")
+steven_dining = NodePath("Dining/Steven")
+steven_backstage = NodePath("Backstage/Steven")
+steven_kitchen = NodePath("Kitchen/Steven")
+steven_lefthall = NodePath("LeftHall/Steven")
+steven_righthall = NodePath("RightHall/Steven")
 
 [node name="Stage" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
@@ -253,6 +259,10 @@ centered = false
 
 [node name="Freddy" type="Sprite2D" parent="CameraRooms/Stage"]
 texture = ExtResource("18_qg43x")
+centered = false
+
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Stage"]
+texture = ExtResource("8_7i2nt")
 centered = false
 
 [node name="Dining" type="SubViewport" parent="CameraRooms"]
@@ -275,6 +285,10 @@ centered = false
 texture = ExtResource("18_qg43x")
 centered = false
 
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Dining"]
+texture = ExtResource("8_7i2nt")
+centered = false
+
 [node name="Backstage" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
@@ -293,6 +307,10 @@ centered = false
 
 [node name="Freddy" type="Sprite2D" parent="CameraRooms/Backstage"]
 texture = ExtResource("18_qg43x")
+centered = false
+
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Backstage"]
+texture = ExtResource("8_7i2nt")
 centered = false
 
 [node name="Kitchen" type="SubViewport" parent="CameraRooms"]
@@ -315,6 +333,10 @@ centered = false
 texture = ExtResource("18_qg43x")
 centered = false
 
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Kitchen"]
+texture = ExtResource("8_7i2nt")
+centered = false
+
 [node name="LeftHall" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
@@ -335,6 +357,10 @@ centered = false
 texture = ExtResource("18_qg43x")
 centered = false
 
+[node name="Steven" type="Sprite2D" parent="CameraRooms/LeftHall"]
+texture = ExtResource("8_7i2nt")
+centered = false
+
 [node name="RightHall" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
@@ -353,6 +379,10 @@ centered = false
 
 [node name="Freddy" type="Sprite2D" parent="CameraRooms/RightHall"]
 texture = ExtResource("18_qg43x")
+centered = false
+
+[node name="Steven" type="Sprite2D" parent="CameraRooms/RightHall"]
+texture = ExtResource("8_7i2nt")
 centered = false
 
 [node name="TopUI" type="CanvasLayer" parent="."]
