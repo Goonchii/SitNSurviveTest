@@ -5,14 +5,12 @@ var AI = {
 	"Char2": [2,3,7,6,9],
 	"Freddy": [0,1,2,3,4],
 	"Steven": [0,0,0,0,0]
+	"Char1": [5,6,3,5,8],
+	"Char2": [5,3,7,6,9],
+	"Freddy": [5,1,2,3,4],
+	"Steven": [5,0,0,0,0]
 }
-var night_schedule = {
-	1: ["Char1","Char2","Freddy"],
-	2: ["Char1","Char2","Freddy"],
-	3: ["Char1","Char2","Freddy"],
-	4: ["Char1","Char2","Freddy"],
-	5: ["Char1","Char2","Freddy"]
-}
+
 var completedNights = [false, false, false, false, false]
 var currentNight = 1
 
