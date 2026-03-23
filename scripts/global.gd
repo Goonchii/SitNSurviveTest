@@ -1,10 +1,10 @@
 extends Node
 
 var AI = {
-	"Char1": [5,6,3,5,8],
-	"Char2": [5,3,7,6,9],
-	"Freddy": [5,1,2,3,4],
-	"Steven": [5,0,0,0,0]
+	"Char1": [3,6,3,5,8],
+	"Char2": [2,3,7,6,9],
+	"Freddy": [1,2,3,4,5],
+	"Steven": [0,0,0,0,0]
 }
 
 var completedNights = [false, false, false, false, false]
