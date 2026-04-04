@@ -18,6 +18,7 @@ func reset_to_start():
 
 # Movement Opportunity
 func timeout() -> void:
+	# Guaranteed to move when you look at him in office
 	if char_position == "office" && office_back_layer.visible:
 		move()
 		print("Freddy immediately moved to: ", char_position)
