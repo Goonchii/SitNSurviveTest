@@ -17,6 +17,10 @@ func timeout() -> void:
 	nightTime += 1
 	if nightTime > 12:
 		nightTime = 1
+	
+	if nightTime == 4:
+		increase_ai()
+	
 	text = str(nightTime, "AM")
 	print("Time is: ", nightTime, "AM")
 	
@@ -28,3 +32,8 @@ func reset_all_characters():
 	for character in get_tree().get_nodes_in_group("Characters"):
 		character.reset_to_start()
 	print("All characters have been reset to start.")
+
+func increase_ai():
+	for character in get_tree().get_nodes_in_group("Characters"):
+		Global.AI[character.name][Global.currentNight - 1] += 3
+		print(character, " AI lvl is now ", Global.AI[character.name][Global.currentNight - 1])

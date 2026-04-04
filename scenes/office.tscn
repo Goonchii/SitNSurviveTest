@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=31 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://ci68s3ahg18kr" path="res://scripts/OfficeManager.gd" id="1_ja80a"]
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
@@ -29,13 +29,6 @@
 [ext_resource type="Script" uid="uid://0ogmovu7tbki" path="res://scripts/room_buttons.gd" id="24_42gc7"]
 [ext_resource type="Script" uid="uid://fjc6u74qltdc" path="res://scripts/cams_sprite_manager.gd" id="25_42gc7"]
 
-[sub_resource type="GDScript" id="GDScript_uwvu6"]
-script/source = "extends Node2D
-
-
-
-"
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_u5glt"]
 viewport_path = NodePath("CameraRooms/Dining")
 
@@ -48,9 +41,6 @@ shader_parameter/opacity = 0.2890000137275
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_ja80a")
-
-[node name="NightManager" type="Node2D" parent="."]
-script = SubResource("GDScript_uwvu6")
 
 [node name="Char1" type="Node2D" parent="." groups=["Characters"]]
 script = ExtResource("1_u4xte")
@@ -420,7 +410,7 @@ horizontal_alignment = 2
 script = ExtResource("3_jlpy7")
 
 [node name="Timer" type="Timer" parent="TopUI/Time"]
-wait_time = 60.0
+wait_time = 3.0
 
 [connection signal="timeout" from="OfficeFront/ShockButtonControls/CooldownTimer" to="OfficeFront/ShockButtonControls" method="_on_cooldown_timer_timeout"]
 [connection signal="button_up" from="OfficeFront/BShockButton" to="OfficeFront/ShockButtonControls" method="_on_b_shock_button_button_up"]
