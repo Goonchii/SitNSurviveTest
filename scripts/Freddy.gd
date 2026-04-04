@@ -2,8 +2,10 @@ extends Node2D
 
 var char_position = "stage"
 
-@onready var monitor_layer: CanvasLayer = get_node("/root/Office/OfficeUI/Monitor")
-@onready var freddy_office: Sprite2D = get_node("/root/Office/OfficeUI/Freddy")
+@onready var monitor_layer: CanvasLayer = get_node("/root/Office/Monitor")
+@onready var office_back_layer: CanvasLayer = get_node("../OfficeBack")
+@onready var office_front_layer: CanvasLayer = get_node("../OfficeFront")
+@onready var freddy_office: Sprite2D = get_node("/root/Office/OfficeBack/Freddy")
 ## @onready var office_manager = get_node("/root/Office")
 
 func _ready() -> void:
@@ -16,9 +18,12 @@ func reset_to_start():
 
 # Movement Opportunity
 func timeout() -> void:
-	if randi_range(1,20) <= Global.AI["Freddy"][Global.currentNight - 1]:
-		# Kill player on next MO if in office
-		if char_position == "office" && monitor_layer.visible:
+	if char_position == "office" && office_back_layer.visible:
+		move()
+		print("Freddy immediately moved to: ", char_position)
+	else: if randi_range(1,20) <= Global.AI["Freddy"][Global.currentNight - 1]:
+		# Kill player on next MO if in right hallway
+		if char_position == "office" && !office_back_layer.visible:
 			print("Freddy attacks.")
 			Global.player_dies()
 			reset_to_start()
