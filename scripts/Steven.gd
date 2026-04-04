@@ -4,8 +4,8 @@ var char_position = "stage"
 var punishment: float = 0
 
 ## @onready var office_manager = get_node("/root/Office")
-@onready var shock_button_controls = get_node("../OfficeUI/ShockButtonControls")
-@onready var steven_office: Sprite2D = get_node("/root/Office/OfficeUI/Steven")
+@onready var shock_button_controls = get_node("../OfficeFront/ShockButtonControls")
+@onready var steven_office: Sprite2D = get_node("/root/Office/OfficeBack/Steven")
 
 func _ready() -> void:
 	print("Steven AI lvl is ", Global.AI["Steven"][Global.currentNight - 1])

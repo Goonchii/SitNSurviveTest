@@ -8,8 +8,8 @@ var cooldown_ready: bool = true
 @onready var freddy = get_node("/root/Office/Freddy")
 @onready var steven = get_node("/root/Office/Steven")
 
-@onready var b_shock_button = get_node("/root/Office/OfficeUI/BShockButton")
-@onready var c_shock_button = get_node("/root/Office/OfficeUI/CShockButton")
+@onready var b_shock_button = get_node("/root/Office/OfficeFront/BShockButton")
+@onready var c_shock_button = get_node("/root/Office/OfficeFront/CShockButton")
 
 func _on_b_shock_button_button_up() -> void:
 	if freddy.char_position == "office":
