@@ -27,16 +27,16 @@ func timeout() -> void:
 
 # Movement path
 func move() -> void:
-		match char_position:
-			"stage":
-				char_position = ["dining"].pick_random()
-			"dining":
-				char_position = ["backstage"].pick_random()
-			"backstage":
-				char_position = ["lefthall"].pick_random()
-			"lefthall":
-				## if office_manager.try_enter(self):
-					char_position = ["office"].pick_random()
-			"office":
-				char_position = ["stage"].pick_random()
-				## office_manager.leave(self)
+	match char_position:
+		"stage":
+			char_position = ["dining"].pick_random()
+		"dining":
+			char_position = ["backstage"].pick_random()
+		"backstage":
+			char_position = ["lefthall"].pick_random()
+		"lefthall":
+			## if office_manager.try_enter(self):
+				char_position = ["office"].pick_random()
+		"office":
+			char_position = ["stage"].pick_random()
+			## office_manager.leave(self)
