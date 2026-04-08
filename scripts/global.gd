@@ -56,6 +56,8 @@ func get_next_night() -> int:
 	return completedNights.size()
 
 func night_completed():
+	if currentNight == custom_night_index + 1:
+		return
 	# Start @ 0 for index
 	var index = currentNight - 1
 	# If its 0+ and under max amt of nights
