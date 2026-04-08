@@ -12,17 +12,14 @@ func _ready() -> void:
 	print("Freddy AI lvl is ", Global.AI["Freddy"][Global.currentNight - 1])
 	freddy_office.visible = false
 	$Timer.timeout.connect(timeout)
+	$OfficeTimer.timeout.connect(office_timeout)
 
 func reset_to_start():
 	char_position = "stage"
 
 # Movement Opportunity
 func timeout() -> void:
-	# Guaranteed to move when you look at him in office
-	if char_position == "office" && office_back_layer.visible:
-		move()
-		print("Freddy immediately moved to: ", char_position)
-	else: if randi_range(1,20) <= Global.AI["Freddy"][Global.currentNight - 1]:
+	if randi_range(1,20) <= Global.AI["Freddy"][Global.currentNight - 1]:
 		# Kill player on next MO if in right hallway
 		if char_position == "office" && !office_back_layer.visible:
 			print("Freddy attacks.")
@@ -33,6 +30,19 @@ func timeout() -> void:
 		else:
 			move()
 			print("Freddy moved to: ", char_position)
+
+func office_timeout() -> void:
+	# Guaranteed to move when you look at him in office
+	if char_position == "office" && office_back_layer.visible:
+		move()
+		$OfficeTimer.stop()
+		print("Freddy immediately moved to: ", char_position)
+
+func on_turn_back() -> void:
+	if char_position == "righthall":
+		move()
+		$OfficeTimer.start()
+		print("Forced freddy into office.")
 
 # Movement path
 func move() -> void:

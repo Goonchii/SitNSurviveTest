@@ -63,6 +63,9 @@ script = ExtResource("5_3hjlj")
 wait_time = 3.0
 autostart = true
 
+[node name="OfficeTimer" type="Timer" parent="Freddy"]
+wait_time = 6.0
+
 [node name="Steven" type="Node2D" parent="." groups=["Characters"]]
 script = ExtResource("6_7i2nt")
 

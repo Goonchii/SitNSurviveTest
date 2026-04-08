@@ -4,6 +4,9 @@ extends Node2D
 @onready var view_back  = $"../OfficeBack"
 @onready var cams_button = $"../TopUI/CamButton"
 @onready var monitor_layer: CanvasLayer = get_node("/root/Office/Monitor")
+
+@onready var freddy = $"../Freddy"
+
 var facing_front = true
 
 func _ready() -> void:
@@ -19,6 +22,8 @@ func _on_turn_back_button_mouse_entered() -> void:
 	view_front.visible = facing_front
 	view_back.visible  = !facing_front
 	cams_button.visible = facing_front
+	
+	freddy.on_turn_back()
 
 
 func _on_turn_front_button_mouse_entered() -> void:
