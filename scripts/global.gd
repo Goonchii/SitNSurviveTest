@@ -1,10 +1,19 @@
 extends Node
 
 var AI = {
-	"Char1": [3,6,3,5,8],
-	"Char2": [2,3,7,6,9],
-	"Freddy": [0,2,3,4,5],
-	"Steven": [0,0,0,0,0]
+	"Char1": [3,6,3,5,8, 0],
+	"Char2": [2,3,7,6,9, 0],
+	"Freddy": [0,2,3,4,5, 0],
+	"Steven": [0,0,0,0,0, 0]
+}
+
+var custom_night_index = 5
+
+var  custom_night_AI = {
+	"Char1": 0,
+	"Char2": 0,
+	"Freddy": 0,
+	"Steven": 0
 }
 
 var completedNights = [false, false, false, false, false]
@@ -60,3 +69,8 @@ func night_completed():
 func player_dies():
 	print("Player has died.")
 	get_tree().change_scene_to_file("res://scenes/Lose.tscn")
+
+func apply_custom_night() -> void:
+	for characters in custom_night_AI:
+		AI[characters][custom_night_index] = custom_night_AI[characters]
+	currentNight = custom_night_index + 1
