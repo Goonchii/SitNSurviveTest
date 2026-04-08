@@ -42,21 +42,21 @@ shader_parameter/opacity = 0.2890000137275
 [node name="Office" type="Node2D"]
 script = ExtResource("1_ja80a")
 
-[node name="Char1" type="Node2D" parent="." groups=["Characters"]]
+[node name="Char1" type="Node2D" parent="." groups=["AIIncreaseCharacters", "Characters"]]
 script = ExtResource("1_u4xte")
 
 [node name="Timer" type="Timer" parent="Char1"]
 wait_time = 3.0
 autostart = true
 
-[node name="Char2" type="Node2D" parent="." groups=["Characters"]]
+[node name="Char2" type="Node2D" parent="." groups=["AIIncreaseCharacters", "Characters"]]
 script = ExtResource("2_ou7di")
 
 [node name="Timer" type="Timer" parent="Char2"]
 wait_time = 3.0
 autostart = true
 
-[node name="Freddy" type="Node2D" parent="." groups=["Characters"]]
+[node name="Freddy" type="Node2D" parent="." groups=["AIIncreaseCharacters", "Characters"]]
 script = ExtResource("5_3hjlj")
 
 [node name="Timer" type="Timer" parent="Freddy"]
