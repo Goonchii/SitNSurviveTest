@@ -410,7 +410,7 @@ horizontal_alignment = 2
 script = ExtResource("3_jlpy7")
 
 [node name="Timer" type="Timer" parent="TopUI/Time"]
-wait_time = 3.0
+wait_time = 60.0
 
 [connection signal="timeout" from="OfficeFront/ShockButtonControls/CooldownTimer" to="OfficeFront/ShockButtonControls" method="_on_cooldown_timer_timeout"]
 [connection signal="button_up" from="OfficeFront/BShockButton" to="OfficeFront/ShockButtonControls" method="_on_b_shock_button_button_up"]
