@@ -19,7 +19,7 @@ func timeout() -> void:
 		# Kill player on next MO if in office
 		if char_position == "office":
 			print("Char1 attacks.")
-			Global.player_dies()
+			Global.player_dies("Char1")
 			reset_to_start()
 			return
 		# Otherwise move normally

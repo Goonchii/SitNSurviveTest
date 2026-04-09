@@ -24,7 +24,7 @@ func timeout() -> void:
 		# Kill player on next MO if in right hallway
 		if char_position == "office" && !office_back_layer.visible:
 			print("Freddy attacks.")
-			Global.player_dies()
+			Global.player_dies("Freddy")
 			reset_to_start()
 			return
 		# Otherwise move normally

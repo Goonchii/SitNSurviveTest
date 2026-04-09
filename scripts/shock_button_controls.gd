@@ -14,7 +14,7 @@ var cooldown_ready: bool = true
 func _on_b_shock_button_button_up() -> void:
 	if freddy.char_position == "office":
 		print("Freddy attacks.")
-		Global.player_dies()
+		Global.player_dies("Freddy")
 		freddy.reset_to_start()
 		
 	else: if cooldown_ready && char1.char_position != "office":
@@ -36,7 +36,7 @@ func _on_b_shock_button_button_up() -> void:
 func _on_c_shock_button_button_up() -> void:
 	if freddy.char_position == "office":
 		print("Freddy attacks.")
-		Global.player_dies()
+		Global.player_dies("Freddy")
 		freddy.reset_to_start()
 		
 	else: if cooldown_ready && char2.char_position != "office":

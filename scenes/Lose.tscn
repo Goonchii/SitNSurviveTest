@@ -19,4 +19,11 @@ offset_bottom = 424.0
 text = "Back to Menu"
 script = ExtResource("1_05mc5")
 
+[node name="KilledBy" type="Label" parent="Back to Menu Button"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -59.0
+offset_right = 51.0
+offset_bottom = -36.0
+
 [connection signal="pressed" from="Back to Menu Button" to="Back to Menu Button" method="_on_pressed"]

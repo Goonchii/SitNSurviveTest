@@ -18,6 +18,7 @@ var  custom_night_AI = {
 
 var completedNights = [false, false, false, false, false]
 var currentNight = 1
+var killer = ""
 
 func _ready() -> void:
 	load_data()
@@ -68,7 +69,8 @@ func night_completed():
 		save_data()
 		currentNight = get_next_night()
 
-func player_dies():
+func player_dies(killed_by: String) -> void:
+	killer = killed_by
 	print("Player has died.")
 	get_tree().change_scene_to_file("res://scenes/Lose.tscn")
 
