@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ce0a3vp4ybja8" path="res://scripts/char1_custom_ai_lvl.gd" id="1_7llvx"]
 [ext_resource type="Script" uid="uid://c1h31w1010hwm" path="res://scripts/char2_custom_ai_lvl.gd" id="2_5gw8k"]
-[ext_resource type="Script" uid="uid://bq13e31dmwjmc" path="res://scripts/start_custom_night_button.gd" id="2_vps8v"]
+[ext_resource type="Script" uid="uid://bq13e31dmwjmc" path="res://scripts/custom_night_menu_buttons.gd" id="2_vps8v"]
 [ext_resource type="Script" uid="uid://t1vjv5uk2q3p" path="res://scripts/freddy_custom_ai_lvl.gd" id="3_aeow7"]
 [ext_resource type="Script" uid="uid://dcfhjcbd2um5r" path="res://scripts/steven_custom_ai_lvl.gd" id="4_kymyu"]
 
@@ -156,12 +156,18 @@ text = "V"
 [node name="VBoxContainer5" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 alignment = 1
+script = ExtResource("2_vps8v")
 
 [node name="StartButton" type="Button" parent="HBoxContainer/VBoxContainer5"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "Start"
-script = ExtResource("2_vps8v")
+
+[node name="Back" type="Button" parent="HBoxContainer/VBoxContainer5"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Back to Menu
+"
 
 [connection signal="button_down" from="HBoxContainer/VBoxContainer/Increase" to="HBoxContainer/VBoxContainer/AILvl" method="_on_increase_button_down"]
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/Increase" to="HBoxContainer/VBoxContainer/AILvl" method="_on_increase_button_up"]
@@ -188,3 +194,4 @@ script = ExtResource("2_vps8v")
 [connection signal="button_up" from="HBoxContainer/VBoxContainer4/Decrease" to="HBoxContainer/VBoxContainer4/AILvl" method="_on_decrease_button_up"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer4/Decrease" to="HBoxContainer/VBoxContainer4/AILvl" method="_on_decrease_pressed"]
 [connection signal="button_up" from="HBoxContainer/VBoxContainer5/StartButton" to="HBoxContainer/VBoxContainer5/StartButton" method="_on_button_up"]
+[connection signal="button_up" from="HBoxContainer/VBoxContainer5/Back" to="HBoxContainer/VBoxContainer5" method="_on_back_button_up"]
