@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1rjviwirfn8o"
-path="res://.godot/imported/Stage Freddy.png-1436274f6c6f230470d3f371621d5765.ctex"
+uid="uid://5edljs0tduut"
+path="res://.godot/imported/Stage Chica.png-6e7badfe2edec215e0754ad695306b9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cams/Stage/Stage Freddy.png"
-dest_files=["res://.godot/imported/Stage Freddy.png-1436274f6c6f230470d3f371621d5765.ctex"]
+source_file="res://assets/Cams/MainSet/Stage Chica.png"
+dest_files=["res://.godot/imported/Stage Chica.png-6e7badfe2edec215e0754ad695306b9f.ctex"]
 
 [params]
 

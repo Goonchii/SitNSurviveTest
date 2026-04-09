@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1pwijigft20u"
-path="res://.godot/imported/Stage Steven.png-e543846ab934f3ed5a8e615be0249d3e.ctex"
+uid="uid://b1rjviwirfn8o"
+path="res://.godot/imported/Stage Freddy.png-e37690d7877dd516c64166d0c92afd43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cams/Stage/Stage Steven.png"
-dest_files=["res://.godot/imported/Stage Steven.png-e543846ab934f3ed5a8e615be0249d3e.ctex"]
+source_file="res://assets/Cams/MainSet/Stage Freddy.png"
+dest_files=["res://.godot/imported/Stage Freddy.png-e37690d7877dd516c64166d0c92afd43.ctex"]
 
 [params]
 
