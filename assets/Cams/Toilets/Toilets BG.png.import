@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbp0bnq3472n1"
-path="res://.godot/imported/Backstage BG.png-18aeaac4f55367b1115798e06e9f9420.ctex"
+uid="uid://sa5wx460mi2x"
+path="res://.godot/imported/Toilets BG.png-5af4b9ef3b21aa8df1fa452f877c3d2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cams/Backstage/Backstage BG.png"
-dest_files=["res://.godot/imported/Backstage BG.png-18aeaac4f55367b1115798e06e9f9420.ctex"]
+source_file="res://assets/Cams/Toilets/Toilets BG.png"
+dest_files=["res://.godot/imported/Toilets BG.png-5af4b9ef3b21aa8df1fa452f877c3d2a.ctex"]
 
 [params]
 

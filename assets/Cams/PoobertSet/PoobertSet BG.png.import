@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbp0bnq3472n1"
-path="res://.godot/imported/Backstage BG.png-18aeaac4f55367b1115798e06e9f9420.ctex"
+uid="uid://dw4m5swvutjqw"
+path="res://.godot/imported/PoobertSet BG.png-15c8eb7928a2431e2a5101d883552982.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cams/Backstage/Backstage BG.png"
-dest_files=["res://.godot/imported/Backstage BG.png-18aeaac4f55367b1115798e06e9f9420.ctex"]
+source_file="res://assets/Cams/PoobertSet/PoobertSet BG.png"
+dest_files=["res://.godot/imported/PoobertSet BG.png-15c8eb7928a2431e2a5101d883552982.ctex"]
 
 [params]
 
