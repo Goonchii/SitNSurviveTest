@@ -1,6 +1,6 @@
 extends Node2D
 
-var char_position = "stage"
+var char_position = "main"
 var punishment: float = 0
 
 ## @onready var office_manager = get_node("/root/Office")
@@ -14,7 +14,7 @@ func _ready() -> void:
 	$PunishmentTimer.timeout.connect(punishment_timeout)
 
 func reset_to_start():
-	char_position = "stage"
+	char_position = "main"
 
 # Movement Opportunity
 func timeout() -> void:
@@ -44,18 +44,14 @@ func punishment_timeout() -> void:
 
 # Movement path
 func move() -> void:
-		match char_position:
-			"stage":
-				char_position = ["dining"].pick_random()
-			"dining":
-				char_position = ["backstage"].pick_random()
-			"backstage":
-				char_position = ["lefthall"].pick_random()
-			"lefthall":
-				## if office_manager.try_enter(self):
-					char_position = ["office"].pick_random()
-					steven_office.visible = true
-			"office":
-				char_position = ["stage"].pick_random()
-				steven_office.visible = false
-				## office_manager.leave(self)
+	match char_position:
+		"main":
+			char_position = ["equipa"].pick_random()
+		"equipa":
+			char_position = ["equipb"].pick_random()
+		"equipb":
+			char_position = ["prop"].pick_random()
+		"prop":
+			## if office_manager.try_enter(self):
+				char_position = ["office"].pick_random()
+				steven_office.visible = true

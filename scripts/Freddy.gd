@@ -1,6 +1,6 @@
 extends Node2D
 
-var char_position = "stage"
+var char_position = "poobert"
 
 @onready var monitor_layer: CanvasLayer = get_node("/root/Office/Monitor")
 @onready var office_back_layer: CanvasLayer = get_node("../OfficeBack")
@@ -15,7 +15,7 @@ func _ready() -> void:
 	$OfficeTimer.timeout.connect(office_timeout)
 
 func reset_to_start():
-	char_position = "stage"
+	char_position = "poobert"
 
 # Movement Opportunity
 func timeout() -> void:
@@ -39,30 +39,30 @@ func office_timeout() -> void:
 		print("Freddy immediately moved to: ", char_position)
 
 func on_turn_back() -> void:
-	if char_position == "righthall":
+	if char_position == "entrance":
 		move()
 		$OfficeTimer.start()
 		print("Forced freddy into office.")
 
 # Movement path
 func move() -> void:
-		match char_position:
-			"stage":
-				char_position = ["dining"].pick_random()
-			"dining":
-				char_position = ["kitchen"].pick_random()
-			"kitchen":
-				char_position = ["righthall"].pick_random()
-			"righthall":
-				## if office_manager.try_enter(self):
-					char_position = ["office"].pick_random()
-					freddy_office.visible = true
-			"office":
-				char_position = ["lefthall"].pick_random()
-				freddy_office.visible = false
-				## office_manager.leave(self)
-			"lefthall":
-				char_position = ["backstage"].pick_random()
-			"backstage":
-					char_position = ["dining"].pick_random()
+	match char_position:
+		"poobert":
+			char_position = ["edit"].pick_random()
+		"edit":
+			char_position = ["lounge"].pick_random()
+		"lounge":
+			char_position = ["entrance"].pick_random()
+		"entrance":
+			## if office_manager.try_enter(self):
+				char_position = ["office"].pick_random()
+				freddy_office.visible = true
+		"office":
+			char_position = ["prop"].pick_random()
+			freddy_office.visible = false
+			## office_manager.leave(self)
+		"prop":
+			char_position = ["backstage"].pick_random()
+		"backstage":
+				char_position = ["edit"].pick_random()
 				

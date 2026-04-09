@@ -1,6 +1,6 @@
 extends Node2D
 
-var char_position = "stage"
+var char_position = "main"
 
 ## @onready var office_manager = get_node("/root/Office")
 
@@ -9,7 +9,7 @@ func _ready() -> void:
 	$Timer.timeout.connect(timeout)
 
 func reset_to_start():
-	char_position = "stage"
+	char_position = "main"
 
 # Movement Opportunity
 func timeout() -> void:
@@ -27,16 +27,19 @@ func timeout() -> void:
 
 # Movement path
 func move() -> void:
-		match char_position:
-			"stage":
-				char_position = ["dining"].pick_random()
-			"dining":
-				char_position = ["kitchen"].pick_random()
-			"kitchen":
-				char_position = ["righthall"].pick_random()
-			"righthall":
-				## if office_manager.try_enter(self):
-					char_position = ["office"].pick_random()
-			"office":
-				char_position = ["start"].pick_random()
-				## office_manager.leave(self)
+	match char_position:
+		"main":
+			char_position = ["backstage"].pick_random()
+		"backstage":
+			char_position = ["equipa"].pick_random()
+		"equipa":
+			char_position = ["equipb"].pick_random()
+		"equipb":
+			## if office_manager.try_enter(self):
+				char_position = ["workshop", "prop"].pick_random()
+		"workshop":
+			char_position = ["prop"].pick_random()
+		"prop":
+			char_position = ["office"].pick_random()
+		"office":
+			## office_manager.leave(self)
