@@ -3,6 +3,7 @@ extends Node2D
 var char_position = "main"
 
 ## @onready var office_manager = get_node("/root/Office")
+@onready var char2_office: Sprite2D = get_node("/root/Office/OfficeBack/Char2")
 
 func _ready() -> void:
 	print("Char2 AI lvl is ", Global.AI["Char2"][Global.currentNight - 1])
@@ -10,6 +11,7 @@ func _ready() -> void:
 
 func reset_to_start():
 	char_position = "main"
+	char2_office.visible = false
 
 # Movement Opportunity
 func timeout() -> void:
@@ -41,5 +43,7 @@ func move() -> void:
 			char_position = ["prop"].pick_random()
 		"prop":
 			char_position = ["office"].pick_random()
+			char2_office.visible = true
 		"office":
+			char2_office.visible = false
 			## office_manager.leave(self)

@@ -2,6 +2,7 @@ extends Node2D
 
 var char_position = "main"
 
+@onready var char1_office: Sprite2D = get_node("/root/Office/OfficeBack/Char1")
 ## @onready var office_manager = get_node("/root/Office")
 
 func _ready() -> void:
@@ -10,6 +11,7 @@ func _ready() -> void:
 
 func reset_to_start():
 	char_position = "main"
+	char1_office.visible = false
 
 # Movement Opportunity
 func timeout() -> void:
@@ -41,6 +43,7 @@ func move() -> void:
 			char_position = ["entrance"].pick_random()
 		"entrance":
 			char_position = ["office"].pick_random()
+			char1_office.visible = true
 		"office":
-			char_position = ["stage"].pick_random()
+			char1_office.visible = false
 			## office_manager.leave(self)
