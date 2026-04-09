@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func reset_to_start():
 	char_position = "main"
+	steven_office.visible = false
 
 # Movement Opportunity
 func timeout() -> void:
