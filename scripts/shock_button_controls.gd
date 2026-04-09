@@ -30,6 +30,8 @@ func _on_b_shock_button_button_up() -> void:
 		
 		shock_counter += 1
 		print("Shock counter set to: ", shock_counter)
+	else:
+		$AudioStreamPlayer.play()
 
 func _on_c_shock_button_button_up() -> void:
 	if freddy.char_position == "office":
@@ -50,6 +52,8 @@ func _on_c_shock_button_button_up() -> void:
 		
 		shock_counter += 1
 		print("Shock counter set to: ", shock_counter)
+	else:
+		$AudioStreamPlayer.play()
 
 
 func _on_cooldown_timer_timeout() -> void:
