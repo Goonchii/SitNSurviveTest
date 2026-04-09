@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b5w43eb767h57"]
+[gd_scene load_steps=37 format=3 uid="uid://b5w43eb767h57"]
 
 [ext_resource type="Script" uid="uid://ci68s3ahg18kr" path="res://scripts/OfficeManager.gd" id="1_ja80a"]
 [ext_resource type="Script" uid="uid://dswpxndljle4a" path="res://scripts/Char1AI.gd" id="1_u4xte"]
@@ -12,25 +12,31 @@
 [ext_resource type="Texture2D" uid="uid://w20fl61184de" path="res://assets/Buttons/ShockButtonON.png" id="6_fmddn"]
 [ext_resource type="Script" uid="uid://bp0druxk780u1" path="res://scripts/office_view_control.gd" id="6_g1ciw"]
 [ext_resource type="Texture2D" uid="uid://cnlf2a7b3t1uf" path="res://assets/Buttons/ShockButtonHOVER.png" id="7_gdafm"]
-[ext_resource type="Texture2D" uid="uid://1pwijigft20u" path="res://assets/Cams/Stage/Stage Steven.png" id="8_7i2nt"]
-[ext_resource type="Texture2D" uid="uid://brmgbljpj1ouy" path="res://assets/Cams/Cams Map.png" id="11_qg43x"]
+[ext_resource type="AudioStream" uid="uid://cvxq1klt2gxc5" path="res://assets/Sounds/fnaf door jam.mp3" id="9_gf52q"]
 [ext_resource type="Texture2D" uid="uid://uoyk2g0stb6f" path="res://assets/Buttons/ShockButtonCooldown.png" id="13_t1nwb"]
-[ext_resource type="Texture2D" uid="uid://c8chqogiy5r18" path="res://assets/Cams/Stage/Stage BG.png" id="14_8ywr3"]
-[ext_resource type="Texture2D" uid="uid://excko3lfsoxj" path="res://assets/Cams/Stage/Stage Bonnie.png" id="15_t1nwb"]
-[ext_resource type="Texture2D" uid="uid://5edljs0tduut" path="res://assets/Cams/Stage/Stage Chica.png" id="16_uwvu6"]
-[ext_resource type="Texture2D" uid="uid://b8bbmoehtge" path="res://assets/Cams/Dining/Dining BG.png" id="17_alkg7"]
+[ext_resource type="Texture2D" uid="uid://nc1mdlqr8bj8" path="res://assets/Cams/MainSet/MainSet BG.png" id="14_42gc7"]
+[ext_resource type="Texture2D" uid="uid://excko3lfsoxj" path="res://assets/Cams/MainSet/Stage Bonnie.png" id="15_gf52q"]
+[ext_resource type="Texture2D" uid="uid://5edljs0tduut" path="res://assets/Cams/MainSet/Stage Chica.png" id="16_fsavt"]
+[ext_resource type="Texture2D" uid="uid://b1rjviwirfn8o" path="res://assets/Cams/MainSet/Stage Freddy.png" id="17_8pip0"]
 [ext_resource type="Shader" uid="uid://cbu0mw63jh41q" path="res://shaders/CameraFilter.gdshader" id="17_fw3ux"]
-[ext_resource type="Texture2D" uid="uid://bo6j4gf7t2bq0" path="res://assets/Cams/Backstage/Backstage BG.png" id="18_3hjlj"]
-[ext_resource type="Texture2D" uid="uid://b1rjviwirfn8o" path="res://assets/Cams/Stage/Stage Freddy.png" id="18_qg43x"]
-[ext_resource type="Texture2D" uid="uid://8rtobw0o7u3j" path="res://assets/Cams/Kitchen/Kitchen BG.png" id="19_qg43x"]
+[ext_resource type="Texture2D" uid="uid://cbp0bnq3472n1" path="res://assets/Cams/Backstage/Backstage BG.png" id="18_3hjlj"]
+[ext_resource type="Texture2D" uid="uid://1pwijigft20u" path="res://assets/Cams/MainSet/Stage Steven.png" id="18_skov3"]
 [ext_resource type="Texture2D" uid="uid://dunp2t2ysir3n" path="res://assets/Office/Office Back BG.png" id="19_u5glt"]
-[ext_resource type="Texture2D" uid="uid://drjdimpfilbtu" path="res://assets/Cams/LeftHall/Left Hall BG.png" id="20_8ywr3"]
-[ext_resource type="Texture2D" uid="uid://c4pyvg55dxj6n" path="res://assets/Cams/RightHall/Right Hall BG.png" id="21_t1nwb"]
+[ext_resource type="Texture2D" uid="uid://dw4m5swvutjqw" path="res://assets/Cams/PoobertSet/PoobertSet BG.png" id="19_wwlo0"]
+[ext_resource type="Texture2D" uid="uid://y3ysgevo28mt" path="res://assets/Cams/Edit/Edit BG.png" id="21_m4cp1"]
+[ext_resource type="Texture2D" uid="uid://k1m76ctm2inx" path="res://assets/Cams/Lounge/Lounge BG.png" id="22_sjdia"]
+[ext_resource type="Texture2D" uid="uid://sa5wx460mi2x" path="res://assets/Cams/Toilets/Toilets BG.png" id="23_0p3hi"]
 [ext_resource type="Script" uid="uid://0ogmovu7tbki" path="res://scripts/room_buttons.gd" id="24_42gc7"]
+[ext_resource type="Texture2D" uid="uid://qh5h7cyhnsyc" path="res://assets/Cams/Entrance/Entrance BG.png" id="24_bkq84"]
 [ext_resource type="Script" uid="uid://fjc6u74qltdc" path="res://scripts/cams_sprite_manager.gd" id="25_42gc7"]
+[ext_resource type="Texture2D" uid="uid://8wcxyxt2i42j" path="res://assets/Cams/Equip A/Equip A BG.png" id="25_osgti"]
+[ext_resource type="Texture2D" uid="uid://b2lvvh7uro5vf" path="res://assets/Cams/Equip B/Equip B BG.png" id="26_142py"]
+[ext_resource type="Texture2D" uid="uid://bwn3o6al18ukp" path="res://assets/Cams/Workshop/Workshop BG.png" id="27_65uj5"]
+[ext_resource type="Texture2D" uid="uid://bslwd1c4jpcmd" path="res://assets/Cams/Props/Props BG.png" id="28_cqgbc"]
+[ext_resource type="Texture2D" uid="uid://bssgwimss3yxn" path="res://assets/Cams/Cameras Map.png" id="31_ak7v7"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_u5glt"]
-viewport_path = NodePath("CameraRooms/Dining")
+viewport_path = NodePath("CameraRooms/Poobert")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g1ciw"]
 shader = ExtResource("17_fw3ux")
@@ -78,6 +84,7 @@ wait_time = 15.0
 script = ExtResource("6_g1ciw")
 
 [node name="OfficeFront" type="CanvasLayer" parent="."]
+visible = false
 follow_viewport_enabled = true
 
 [node name="OfficeBG" type="Sprite2D" parent="OfficeFront"]
@@ -92,6 +99,9 @@ script = ExtResource("5_alkg7")
 [node name="CooldownTimer" type="Timer" parent="OfficeFront/ShockButtonControls"]
 wait_time = 8.0
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="OfficeFront/ShockButtonControls"]
+stream = ExtResource("9_gf52q")
 
 [node name="BShockButton" type="TextureButton" parent="OfficeFront"]
 texture_filter = 1
@@ -126,79 +136,99 @@ offset_right = 1885.0
 offset_bottom = 770.0
 text = ">>>"
 
-[node name="CameraRooms" type="Node2D" parent="." node_paths=PackedStringArray("char1_stage", "char1_dining", "char1_backstage", "char1_kitchen", "char1_lefthall", "char1_righthall", "char2_stage", "char2_dining", "char2_backstage", "char2_kitchen", "char2_lefthall", "char2_righthall", "freddy_stage", "freddy_dining", "freddy_backstage", "freddy_kitchen", "freddy_lefthall", "freddy_righthall", "steven_stage", "steven_dining", "steven_backstage", "steven_kitchen", "steven_lefthall", "steven_righthall")]
+[node name="CameraRooms" type="Node2D" parent="." node_paths=PackedStringArray("char1_main", "char1_poobert", "char1_backstage", "char1_edit", "char1_lounge", "char1_toilet", "char1_entrance", "char1_equipa", "char1_equipb", "char1_workshop", "char1_props", "char2_main", "char2_poobert", "char2_backstage", "char2_edit", "char2_lounge", "char2_toilet", "char2_entrance", "char2_equipa", "char2_equipb", "char2_workshop", "char2_props", "freddy_main", "freddy_poobert", "freddy_backstage", "freddy_edit", "freddy_lounge", "freddy_toilet", "freddy_entrance", "freddy_equipa", "freddy_equipb", "freddy_workshop", "freddy_props", "steven_main", "steven_poobert", "steven_backstage", "steven_edit", "steven_lounge", "steven_toilet", "steven_entrance", "steven_equipa", "steven_equipb", "steven_workshop", "steven_props")]
 script = ExtResource("25_42gc7")
-char1_stage = NodePath("Stage/Char1")
-char1_dining = NodePath("Dining/Char1")
+char1_main = NodePath("Main/Char1")
+char1_poobert = NodePath("Poobert/Char1")
 char1_backstage = NodePath("Backstage/Char1")
-char1_kitchen = NodePath("Kitchen/Char1")
-char1_lefthall = NodePath("LeftHall/Char1")
-char1_righthall = NodePath("RightHall/Char1")
-char2_stage = NodePath("Stage/Char2")
-char2_dining = NodePath("Dining/Char2")
+char1_edit = NodePath("Edit/Char1")
+char1_lounge = NodePath("Lounge/Char1")
+char1_toilet = NodePath("Toilet/Char1")
+char1_entrance = NodePath("Entrance/Char1")
+char1_equipa = NodePath("EquipA/Char1")
+char1_equipb = NodePath("EquipB/Char1")
+char1_workshop = NodePath("Workshop/Char1")
+char1_props = NodePath("Props/Char1")
+char2_main = NodePath("Main/Char2")
+char2_poobert = NodePath("Poobert/Char2")
 char2_backstage = NodePath("Backstage/Char2")
-char2_kitchen = NodePath("Kitchen/Char2")
-char2_lefthall = NodePath("LeftHall/Char2")
-char2_righthall = NodePath("RightHall/Char2")
-freddy_stage = NodePath("Stage/Freddy")
-freddy_dining = NodePath("Dining/Freddy")
+char2_edit = NodePath("Edit/Char2")
+char2_lounge = NodePath("Lounge/Char2")
+char2_toilet = NodePath("Toilet/Char2")
+char2_entrance = NodePath("Entrance/Char2")
+char2_equipa = NodePath("EquipA/Char2")
+char2_equipb = NodePath("EquipB/Char2")
+char2_workshop = NodePath("Workshop/Char2")
+char2_props = NodePath("Props/Char2")
+freddy_main = NodePath("Main/Freddy")
+freddy_poobert = NodePath("Poobert/Freddy")
 freddy_backstage = NodePath("Backstage/Freddy")
-freddy_kitchen = NodePath("Kitchen/Freddy")
-freddy_lefthall = NodePath("LeftHall/Freddy")
-freddy_righthall = NodePath("RightHall/Freddy")
-steven_stage = NodePath("Stage/Steven")
-steven_dining = NodePath("Dining/Steven")
+freddy_edit = NodePath("Edit/Freddy")
+freddy_lounge = NodePath("Lounge/Freddy")
+freddy_toilet = NodePath("Toilet/Freddy")
+freddy_entrance = NodePath("Entrance/Freddy")
+freddy_equipa = NodePath("EquipA/Freddy")
+freddy_equipb = NodePath("EquipB/Freddy")
+freddy_workshop = NodePath("Workshop/Freddy")
+freddy_props = NodePath("Props/Freddy")
+steven_main = NodePath("Main/Steven")
+steven_poobert = NodePath("Poobert/Steven")
 steven_backstage = NodePath("Backstage/Steven")
-steven_kitchen = NodePath("Kitchen/Steven")
-steven_lefthall = NodePath("LeftHall/Steven")
-steven_righthall = NodePath("RightHall/Steven")
+steven_edit = NodePath("Edit/Steven")
+steven_lounge = NodePath("Lounge/Steven")
+steven_toilet = NodePath("Toilet/Steven")
+steven_entrance = NodePath("Entrance/Steven")
+steven_equipa = NodePath("EquipA/Steven")
+steven_equipb = NodePath("EquipB/Steven")
+steven_workshop = NodePath("Workshop/Steven")
+steven_props = NodePath("Props/Steven")
 
-[node name="Stage" type="SubViewport" parent="CameraRooms"]
+[node name="Main" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="Background" type="Sprite2D" parent="CameraRooms/Stage"]
-texture = ExtResource("14_8ywr3")
+[node name="Background" type="Sprite2D" parent="CameraRooms/Main"]
+texture = ExtResource("14_42gc7")
 centered = false
 
-[node name="Char1" type="Sprite2D" parent="CameraRooms/Stage"]
-texture = ExtResource("15_t1nwb")
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Main"]
+texture = ExtResource("15_gf52q")
 centered = false
 
-[node name="Char2" type="Sprite2D" parent="CameraRooms/Stage"]
-texture = ExtResource("16_uwvu6")
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Main"]
+texture = ExtResource("16_fsavt")
 centered = false
 
-[node name="Freddy" type="Sprite2D" parent="CameraRooms/Stage"]
-texture = ExtResource("18_qg43x")
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Main"]
+texture = ExtResource("17_8pip0")
 centered = false
 
-[node name="Steven" type="Sprite2D" parent="CameraRooms/Stage"]
-texture = ExtResource("8_7i2nt")
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Main"]
+texture = ExtResource("18_skov3")
 centered = false
 
-[node name="Dining" type="SubViewport" parent="CameraRooms"]
+[node name="Poobert" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="Background" type="Sprite2D" parent="CameraRooms/Dining"]
-texture = ExtResource("17_alkg7")
+[node name="Background" type="Sprite2D" parent="CameraRooms/Poobert"]
+texture = ExtResource("19_wwlo0")
 centered = false
 
-[node name="Char1" type="Sprite2D" parent="CameraRooms/Dining"]
-texture = ExtResource("15_t1nwb")
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Poobert"]
+texture = ExtResource("15_gf52q")
 centered = false
 
-[node name="Char2" type="Sprite2D" parent="CameraRooms/Dining"]
-texture = ExtResource("16_uwvu6")
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Poobert"]
+texture = ExtResource("16_fsavt")
 centered = false
 
-[node name="Freddy" type="Sprite2D" parent="CameraRooms/Dining"]
-texture = ExtResource("18_qg43x")
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Poobert"]
+texture = ExtResource("17_8pip0")
 centered = false
 
-[node name="Steven" type="Sprite2D" parent="CameraRooms/Dining"]
-texture = ExtResource("8_7i2nt")
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Poobert"]
+texture = ExtResource("18_skov3")
 centered = false
 
 [node name="Backstage" type="SubViewport" parent="CameraRooms"]
@@ -210,107 +240,234 @@ texture = ExtResource("18_3hjlj")
 centered = false
 
 [node name="Char1" type="Sprite2D" parent="CameraRooms/Backstage"]
-texture = ExtResource("15_t1nwb")
+texture = ExtResource("15_gf52q")
 centered = false
 
 [node name="Char2" type="Sprite2D" parent="CameraRooms/Backstage"]
-texture = ExtResource("16_uwvu6")
+texture = ExtResource("16_fsavt")
 centered = false
 
 [node name="Freddy" type="Sprite2D" parent="CameraRooms/Backstage"]
-texture = ExtResource("18_qg43x")
+texture = ExtResource("17_8pip0")
 centered = false
 
 [node name="Steven" type="Sprite2D" parent="CameraRooms/Backstage"]
-texture = ExtResource("8_7i2nt")
+texture = ExtResource("18_skov3")
 centered = false
 
-[node name="Kitchen" type="SubViewport" parent="CameraRooms"]
+[node name="Edit" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="Background" type="Sprite2D" parent="CameraRooms/Kitchen"]
-texture = ExtResource("19_qg43x")
+[node name="Background" type="Sprite2D" parent="CameraRooms/Edit"]
+texture = ExtResource("21_m4cp1")
 centered = false
 
-[node name="Char1" type="Sprite2D" parent="CameraRooms/Kitchen"]
-texture = ExtResource("15_t1nwb")
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Edit"]
+texture = ExtResource("15_gf52q")
 centered = false
 
-[node name="Char2" type="Sprite2D" parent="CameraRooms/Kitchen"]
-texture = ExtResource("16_uwvu6")
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Edit"]
+texture = ExtResource("16_fsavt")
 centered = false
 
-[node name="Freddy" type="Sprite2D" parent="CameraRooms/Kitchen"]
-texture = ExtResource("18_qg43x")
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Edit"]
+texture = ExtResource("17_8pip0")
 centered = false
 
-[node name="Steven" type="Sprite2D" parent="CameraRooms/Kitchen"]
-texture = ExtResource("8_7i2nt")
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Edit"]
+texture = ExtResource("18_skov3")
 centered = false
 
-[node name="LeftHall" type="SubViewport" parent="CameraRooms"]
+[node name="Lounge" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="Background" type="Sprite2D" parent="CameraRooms/LeftHall"]
-texture = ExtResource("20_8ywr3")
+[node name="Background" type="Sprite2D" parent="CameraRooms/Lounge"]
+texture = ExtResource("22_sjdia")
 centered = false
 
-[node name="Char1" type="Sprite2D" parent="CameraRooms/LeftHall"]
-texture = ExtResource("15_t1nwb")
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Lounge"]
+texture = ExtResource("15_gf52q")
 centered = false
 
-[node name="Char2" type="Sprite2D" parent="CameraRooms/LeftHall"]
-texture = ExtResource("16_uwvu6")
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Lounge"]
+texture = ExtResource("16_fsavt")
 centered = false
 
-[node name="Freddy" type="Sprite2D" parent="CameraRooms/LeftHall"]
-texture = ExtResource("18_qg43x")
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Lounge"]
+texture = ExtResource("17_8pip0")
 centered = false
 
-[node name="Steven" type="Sprite2D" parent="CameraRooms/LeftHall"]
-texture = ExtResource("8_7i2nt")
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Lounge"]
+texture = ExtResource("18_skov3")
 centered = false
 
-[node name="RightHall" type="SubViewport" parent="CameraRooms"]
+[node name="Toilet" type="SubViewport" parent="CameraRooms"]
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="Background" type="Sprite2D" parent="CameraRooms/RightHall"]
-texture = ExtResource("21_t1nwb")
+[node name="Background" type="Sprite2D" parent="CameraRooms/Toilet"]
+texture = ExtResource("23_0p3hi")
 centered = false
 
-[node name="Char1" type="Sprite2D" parent="CameraRooms/RightHall"]
-texture = ExtResource("15_t1nwb")
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Toilet"]
+texture = ExtResource("15_gf52q")
 centered = false
 
-[node name="Char2" type="Sprite2D" parent="CameraRooms/RightHall"]
-texture = ExtResource("16_uwvu6")
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Toilet"]
+texture = ExtResource("16_fsavt")
 centered = false
 
-[node name="Freddy" type="Sprite2D" parent="CameraRooms/RightHall"]
-texture = ExtResource("18_qg43x")
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Toilet"]
+texture = ExtResource("17_8pip0")
 centered = false
 
-[node name="Steven" type="Sprite2D" parent="CameraRooms/RightHall"]
-texture = ExtResource("8_7i2nt")
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Toilet"]
+texture = ExtResource("18_skov3")
+centered = false
+
+[node name="Entrance" type="SubViewport" parent="CameraRooms"]
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Background" type="Sprite2D" parent="CameraRooms/Entrance"]
+texture = ExtResource("24_bkq84")
+centered = false
+
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Entrance"]
+texture = ExtResource("15_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Entrance"]
+texture = ExtResource("16_fsavt")
+centered = false
+
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Entrance"]
+texture = ExtResource("17_8pip0")
+centered = false
+
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Entrance"]
+texture = ExtResource("18_skov3")
+centered = false
+
+[node name="EquipA" type="SubViewport" parent="CameraRooms"]
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Background" type="Sprite2D" parent="CameraRooms/EquipA"]
+texture = ExtResource("25_osgti")
+centered = false
+
+[node name="Char1" type="Sprite2D" parent="CameraRooms/EquipA"]
+texture = ExtResource("15_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/EquipA"]
+texture = ExtResource("16_fsavt")
+centered = false
+
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/EquipA"]
+texture = ExtResource("17_8pip0")
+centered = false
+
+[node name="Steven" type="Sprite2D" parent="CameraRooms/EquipA"]
+texture = ExtResource("18_skov3")
+centered = false
+
+[node name="EquipB" type="SubViewport" parent="CameraRooms"]
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Background" type="Sprite2D" parent="CameraRooms/EquipB"]
+texture = ExtResource("26_142py")
+centered = false
+
+[node name="Char1" type="Sprite2D" parent="CameraRooms/EquipB"]
+texture = ExtResource("15_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/EquipB"]
+texture = ExtResource("16_fsavt")
+centered = false
+
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/EquipB"]
+texture = ExtResource("17_8pip0")
+centered = false
+
+[node name="Steven" type="Sprite2D" parent="CameraRooms/EquipB"]
+texture = ExtResource("18_skov3")
+centered = false
+
+[node name="Workshop" type="SubViewport" parent="CameraRooms"]
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Background" type="Sprite2D" parent="CameraRooms/Workshop"]
+texture = ExtResource("27_65uj5")
+centered = false
+
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Workshop"]
+texture = ExtResource("15_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Workshop"]
+texture = ExtResource("16_fsavt")
+centered = false
+
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Workshop"]
+texture = ExtResource("17_8pip0")
+centered = false
+
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Workshop"]
+texture = ExtResource("18_skov3")
+centered = false
+
+[node name="Props" type="SubViewport" parent="CameraRooms"]
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Background" type="Sprite2D" parent="CameraRooms/Props"]
+texture = ExtResource("28_cqgbc")
+centered = false
+
+[node name="Char1" type="Sprite2D" parent="CameraRooms/Props"]
+texture = ExtResource("15_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="CameraRooms/Props"]
+texture = ExtResource("16_fsavt")
+centered = false
+
+[node name="Freddy" type="Sprite2D" parent="CameraRooms/Props"]
+texture = ExtResource("17_8pip0")
+centered = false
+
+[node name="Steven" type="Sprite2D" parent="CameraRooms/Props"]
+texture = ExtResource("18_skov3")
 centered = false
 
 [node name="OfficeBack" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="OfficeDoorBG" type="Sprite2D" parent="OfficeBack"]
 scale = Vector2(1.2, 1.40625)
 texture = ExtResource("19_u5glt")
 centered = false
 
+[node name="Char1" type="Sprite2D" parent="OfficeBack"]
+texture = ExtResource("15_gf52q")
+centered = false
+
+[node name="Char2" type="Sprite2D" parent="OfficeBack"]
+texture = ExtResource("16_fsavt")
+centered = false
+
 [node name="Freddy" type="Sprite2D" parent="OfficeBack"]
-texture = ExtResource("18_qg43x")
+texture = ExtResource("17_8pip0")
 centered = false
 
 [node name="Steven" type="Sprite2D" parent="OfficeBack"]
-texture = ExtResource("8_7i2nt")
+texture = ExtResource("18_skov3")
 centered = false
 
 [node name="TurnFrontButton" type="Button" parent="OfficeBack"]
@@ -333,56 +490,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("ViewportTexture_u5glt")
 
-[node name="Map" type="Sprite2D" parent="Monitor"]
-texture = ExtResource("11_qg43x")
-centered = false
-
-[node name="RoomButtons" type="Node" parent="Monitor" node_paths=PackedStringArray("camera_feed")]
-script = ExtResource("24_42gc7")
-camera_feed = NodePath("../CamFeed")
-
-[node name="StageButton" type="Button" parent="Monitor"]
-offset_left = 1537.0
-offset_top = 481.0
-offset_right = 1612.0
-offset_bottom = 525.0
-text = "Stage"
-
-[node name="DiningButton" type="Button" parent="Monitor"]
-offset_left = 1549.0
-offset_top = 600.0
-offset_right = 1624.0
-offset_bottom = 644.0
-text = "Dining"
-
-[node name="BackstageButton" type="Button" parent="Monitor"]
-offset_left = 1307.0
-offset_top = 615.0
-offset_right = 1394.0
-offset_bottom = 659.0
-text = "Backstage"
-
-[node name="KitchenButton" type="Button" parent="Monitor"]
-offset_left = 1747.0
-offset_top = 817.0
-offset_right = 1822.0
-offset_bottom = 861.0
-text = "Kitchen"
-
-[node name="LeftHallButton" type="Button" parent="Monitor"]
-offset_left = 1435.0
-offset_top = 801.0
-offset_right = 1517.0
-offset_bottom = 845.0
-text = "L Hallway"
-
-[node name="RightHallButton" type="Button" parent="Monitor"]
-offset_left = 1615.0
-offset_top = 810.0
-offset_right = 1699.0
-offset_bottom = 854.0
-text = "R Hallway"
-
 [node name="ColorRect" type="ColorRect" parent="Monitor"]
 material = SubResource("ShaderMaterial_g1ciw")
 anchors_preset = 15
@@ -391,6 +498,91 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Map" type="Sprite2D" parent="Monitor"]
+texture = ExtResource("31_ak7v7")
+centered = false
+
+[node name="RoomButtons" type="Node" parent="Monitor" node_paths=PackedStringArray("camera_feed")]
+script = ExtResource("24_42gc7")
+camera_feed = NodePath("../CamFeed")
+
+[node name="Main" type="Button" parent="Monitor"]
+offset_left = 1798.0
+offset_top = 284.0
+offset_right = 1873.0
+offset_bottom = 328.0
+text = "Main"
+
+[node name="Poobert" type="Button" parent="Monitor"]
+offset_left = 1394.0
+offset_top = 295.0
+offset_right = 1469.0
+offset_bottom = 339.0
+text = "Poobert"
+
+[node name="Backstage" type="Button" parent="Monitor"]
+offset_left = 1461.0
+offset_top = 584.0
+offset_right = 1548.0
+offset_bottom = 628.0
+text = "Backstage"
+
+[node name="Edit" type="Button" parent="Monitor"]
+offset_left = 1246.0
+offset_top = 494.0
+offset_right = 1321.0
+offset_bottom = 538.0
+text = "Edit"
+
+[node name="Lounge" type="Button" parent="Monitor"]
+offset_left = 1297.0
+offset_top = 725.0
+offset_right = 1379.0
+offset_bottom = 769.0
+text = "Lounge"
+
+[node name="Toilet" type="Button" parent="Monitor"]
+offset_left = 1137.0
+offset_top = 710.0
+offset_right = 1221.0
+offset_bottom = 754.0
+text = "Toilet"
+
+[node name="Entrance" type="Button" parent="Monitor"]
+offset_left = 1190.0
+offset_top = 855.0
+offset_right = 1267.0
+offset_bottom = 899.0
+text = "Entrance"
+
+[node name="EquipA" type="Button" parent="Monitor"]
+offset_left = 1815.0
+offset_top = 595.0
+offset_right = 1878.0
+offset_bottom = 639.0
+text = "EquipA"
+
+[node name="EquipB" type="Button" parent="Monitor"]
+offset_left = 1822.0
+offset_top = 723.0
+offset_right = 1885.0
+offset_bottom = 767.0
+text = "EquipB"
+
+[node name="Workshop" type="Button" parent="Monitor"]
+offset_left = 1710.0
+offset_top = 839.0
+offset_right = 1797.0
+offset_bottom = 883.0
+text = "Workshop"
+
+[node name="Props" type="Button" parent="Monitor"]
+offset_left = 1551.0
+offset_top = 787.0
+offset_right = 1604.0
+offset_bottom = 831.0
+text = "Props"
 
 [node name="TopUI" type="CanvasLayer" parent="."]
 
@@ -420,10 +612,15 @@ wait_time = 60.0
 [connection signal="button_up" from="OfficeFront/CShockButton" to="OfficeFront/ShockButtonControls" method="_on_c_shock_button_button_up"]
 [connection signal="mouse_entered" from="OfficeFront/TurnBackButton" to="OfficeViewControl" method="_on_turn_back_button_mouse_entered"]
 [connection signal="mouse_entered" from="OfficeBack/TurnFrontButton" to="OfficeViewControl" method="_on_turn_front_button_mouse_entered"]
-[connection signal="button_up" from="Monitor/StageButton" to="Monitor/RoomButtons" method="_on_stage_button_button_up"]
-[connection signal="button_up" from="Monitor/DiningButton" to="Monitor/RoomButtons" method="_on_dining_button_button_up"]
-[connection signal="button_up" from="Monitor/BackstageButton" to="Monitor/RoomButtons" method="_on_backstage_button_button_up"]
-[connection signal="button_up" from="Monitor/KitchenButton" to="Monitor/RoomButtons" method="_on_kitchen_button_button_up"]
-[connection signal="button_up" from="Monitor/LeftHallButton" to="Monitor/RoomButtons" method="_on_left_hall_button_button_up"]
-[connection signal="button_up" from="Monitor/RightHallButton" to="Monitor/RoomButtons" method="_on_right_hall_button_button_up"]
+[connection signal="button_up" from="Monitor/Main" to="Monitor/RoomButtons" method="_on_main_button_up"]
+[connection signal="button_up" from="Monitor/Poobert" to="Monitor/RoomButtons" method="_on_poobert_button_up"]
+[connection signal="button_up" from="Monitor/Backstage" to="Monitor/RoomButtons" method="_on_backstage_button_up"]
+[connection signal="button_up" from="Monitor/Edit" to="Monitor/RoomButtons" method="_on_edit_button_up"]
+[connection signal="button_up" from="Monitor/Lounge" to="Monitor/RoomButtons" method="_on_lounge_button_up"]
+[connection signal="button_up" from="Monitor/Toilet" to="Monitor/RoomButtons" method="_on_toilet_button_up"]
+[connection signal="button_up" from="Monitor/Entrance" to="Monitor/RoomButtons" method="_on_entrance_button_up"]
+[connection signal="button_up" from="Monitor/EquipA" to="Monitor/RoomButtons" method="_on_equip_a_button_up"]
+[connection signal="button_up" from="Monitor/EquipB" to="Monitor/RoomButtons" method="_on_equip_b_button_up"]
+[connection signal="button_up" from="Monitor/Workshop" to="Monitor/RoomButtons" method="_on_workshop_button_up"]
+[connection signal="button_up" from="Monitor/Props" to="Monitor/RoomButtons" method="_on_props_button_up"]
 [connection signal="mouse_entered" from="TopUI/CamButton" to="OfficeViewControl" method="_on_cam_button_mouse_entered"]
