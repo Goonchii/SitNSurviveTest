@@ -193,5 +193,5 @@ text = "Back to Menu
 [connection signal="button_down" from="HBoxContainer/VBoxContainer4/Decrease" to="HBoxContainer/VBoxContainer4/AILvl" method="_on_decrease_button_down"]
 [connection signal="button_up" from="HBoxContainer/VBoxContainer4/Decrease" to="HBoxContainer/VBoxContainer4/AILvl" method="_on_decrease_button_up"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer4/Decrease" to="HBoxContainer/VBoxContainer4/AILvl" method="_on_decrease_pressed"]
-[connection signal="button_up" from="HBoxContainer/VBoxContainer5/StartButton" to="HBoxContainer/VBoxContainer5/StartButton" method="_on_button_up"]
+[connection signal="button_up" from="HBoxContainer/VBoxContainer5/StartButton" to="HBoxContainer/VBoxContainer5" method="_on_start_button_up"]
 [connection signal="button_up" from="HBoxContainer/VBoxContainer5/Back" to="HBoxContainer/VBoxContainer5" method="_on_back_button_up"]
