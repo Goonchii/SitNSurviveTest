@@ -4,7 +4,7 @@ var AI = {
 	"Char1": [3,6,3,5,8, 0],
 	"Char2": [2,3,7,6,9, 0],
 	"Freddy": [0,2,3,4,5, 0],
-	"Steven": [3,5,7,9,11, 0]
+	"Steven": [1,3,6,8,10, 0]
 }
 var current_AI = {}
 var custom_night_index = 5

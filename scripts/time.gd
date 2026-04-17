@@ -8,6 +8,7 @@ func _ready() -> void:
 	$Timer.start()
 	nightTime = 12
 	
+	Global.current_AI = Global.AI.duplicate(true)
 	reset_all_characters()
 	shock_button_controls.shock_counter = 0
 	print("It is night ", Global.currentNight)
@@ -33,7 +34,6 @@ func reset_all_characters():
 		character.reset_to_start()
 	print("All characters have been reset to start.")
 	
-	Global.current_AI = Global.AI.duplicate(true)
 	print("Current AI levels are: ", Global.current_AI)
 
 func increase_ai():

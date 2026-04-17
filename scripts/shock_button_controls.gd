@@ -23,7 +23,7 @@ func _on_b_shock_button_button_up() -> void:
 		c_shock_button.disabled = true
 		$CooldownTimer.start()
 		
-		steven.punish()
+		steven.progress()
 		
 		char1.reset_to_start()
 		print("Shocked bonnie.")
@@ -45,7 +45,7 @@ func _on_c_shock_button_button_up() -> void:
 		c_shock_button.disabled = true
 		$CooldownTimer.start()
 		
-		steven.punish()
+		steven.progress()
 		
 		char2.reset_to_start()
 		print("Shocked chica.")
@@ -60,4 +60,3 @@ func _on_cooldown_timer_timeout() -> void:
 	cooldown_ready = true
 	b_shock_button.disabled = false
 	c_shock_button.disabled = false
-	steven.punishment = 2

@@ -1,7 +1,7 @@
 extends Node2D
 
 var char_position = "main"
-var punishment: float = 0
+var progression: int = 0
 
 ## @onready var office_manager = get_node("/root/Office")
 @onready var shock_button_controls = get_node("../OfficeFront/ShockButtonControls")
@@ -9,49 +9,34 @@ var punishment: float = 0
 
 func _ready() -> void:
 	steven_office.visible = false
-	$Timer.timeout.connect(timeout)
-	$PunishmentTimer.timeout.connect(punishment_timeout)
 
 func reset_to_start():
 	char_position = "main"
 	steven_office.visible = false
+	progression = 30 - Global.current_AI["Steven"][Global.currentNight - 1]
 
 # Movement Opportunity
-func timeout() -> void:
-	if randi_range(1,20) <= Global.current_AI["Steven"][Global.currentNight - 1]:
-		# Kill player on next MO if in office
-		if char_position == "office":
-			print("Steven attacks.")
-			Global.player_dies("Steven")
-			reset_to_start()
-			return
-		# Otherwise move normally
-		else:
-			move()
-			print("Steven moved to: ", char_position)
-
-func punish() -> void:
-	if shock_button_controls.shock_counter == 1:
-		$Timer.start()
-	
-	$Timer.wait_time -= punishment
-	print("Timer is now ", $Timer.wait_time)
-
-func punishment_timeout() -> void:
-	if punishment > 0.2:
-		punishment -= 0.2
-		print("Punishment is now ", punishment)
+func progress() -> void:
+	progression -= 1
+	move()
+	print("Steven is in: ", char_position)
+	print("Steven's progression is: ", progression)
 
 # Movement path
 func move() -> void:
-	match char_position:
-		"main":
+	match progression:
+		20:
 			char_position = ["equipa"].pick_random()
-		"equipa":
+		12:
 			char_position = ["equipb"].pick_random()
-		"equipb":
-			char_position = ["prop"].pick_random()
-		"prop":
+		7:
+			char_position = ["workshop"].pick_random()
+		3:
+			char_position = ["props"].pick_random()
+		0:
 			## if office_manager.try_enter(self):
 				char_position = ["office"].pick_random()
 				steven_office.visible = true
+				print("Steven attacks.")
+				Global.player_dies("Steven")
+				reset_to_start()

@@ -75,11 +75,6 @@ wait_time = 6.0
 [node name="Steven" type="Node2D" parent="." groups=["Characters"]]
 script = ExtResource("6_7i2nt")
 
-[node name="Timer" type="Timer" parent="Steven"]
-wait_time = 15.0
-
-[node name="PunishmentTimer" type="Timer" parent="Steven"]
-
 [node name="OfficeViewControl" type="Node2D" parent="."]
 script = ExtResource("6_g1ciw")
 
