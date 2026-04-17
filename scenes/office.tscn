@@ -124,13 +124,6 @@ texture_disabled = ExtResource("13_t1nwb")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TurnBackButton" type="Button" parent="OfficeFront"]
-offset_left = 1722.0
-offset_top = 297.0
-offset_right = 1885.0
-offset_bottom = 770.0
-text = ">>>"
-
 [node name="CameraRooms" type="Node2D" parent="." node_paths=PackedStringArray("char1_main", "char1_poobert", "char1_backstage", "char1_edit", "char1_lounge", "char1_toilet", "char1_entrance", "char1_equipa", "char1_equipb", "char1_workshop", "char1_props", "char2_main", "char2_poobert", "char2_backstage", "char2_edit", "char2_lounge", "char2_toilet", "char2_entrance", "char2_equipa", "char2_equipb", "char2_workshop", "char2_props", "freddy_main", "freddy_poobert", "freddy_backstage", "freddy_edit", "freddy_lounge", "freddy_toilet", "freddy_entrance", "freddy_equipa", "freddy_equipb", "freddy_workshop", "freddy_props", "steven_main", "steven_poobert", "steven_backstage", "steven_edit", "steven_lounge", "steven_toilet", "steven_entrance", "steven_equipa", "steven_equipb", "steven_workshop", "steven_props")]
 script = ExtResource("25_42gc7")
 char1_main = NodePath("Main/Char1")
@@ -465,13 +458,6 @@ centered = false
 texture = ExtResource("18_skov3")
 centered = false
 
-[node name="TurnFrontButton" type="Button" parent="OfficeBack"]
-offset_left = 64.0
-offset_top = 266.0
-offset_right = 196.0
-offset_bottom = 785.0
-text = "<<<"
-
 [node name="Monitor" type="CanvasLayer" parent="."]
 visible = false
 follow_viewport_enabled = true
@@ -581,14 +567,6 @@ text = "Props"
 
 [node name="TopUI" type="CanvasLayer" parent="."]
 
-[node name="CamButton" type="Button" parent="TopUI"]
-z_index = 1
-offset_left = 314.0
-offset_top = 900.0
-offset_right = 1576.0
-offset_bottom = 1053.0
-text = "Hello Mouse over me for cams :)"
-
 [node name="Time" type="Label" parent="TopUI"]
 offset_left = 1631.0
 offset_top = 38.0
@@ -605,8 +583,6 @@ wait_time = 60.0
 [connection signal="timeout" from="OfficeFront/ShockButtonControls/CooldownTimer" to="OfficeFront/ShockButtonControls" method="_on_cooldown_timer_timeout"]
 [connection signal="button_up" from="OfficeFront/BShockButton" to="OfficeFront/ShockButtonControls" method="_on_b_shock_button_button_up"]
 [connection signal="button_up" from="OfficeFront/CShockButton" to="OfficeFront/ShockButtonControls" method="_on_c_shock_button_button_up"]
-[connection signal="mouse_entered" from="OfficeFront/TurnBackButton" to="OfficeViewControl" method="_on_turn_back_button_mouse_entered"]
-[connection signal="mouse_entered" from="OfficeBack/TurnFrontButton" to="OfficeViewControl" method="_on_turn_front_button_mouse_entered"]
 [connection signal="button_up" from="Monitor/Main" to="Monitor/RoomButtons" method="_on_main_button_up"]
 [connection signal="button_up" from="Monitor/Poobert" to="Monitor/RoomButtons" method="_on_poobert_button_up"]
 [connection signal="button_up" from="Monitor/Backstage" to="Monitor/RoomButtons" method="_on_backstage_button_up"]
@@ -618,4 +594,3 @@ wait_time = 60.0
 [connection signal="button_up" from="Monitor/EquipB" to="Monitor/RoomButtons" method="_on_equip_b_button_up"]
 [connection signal="button_up" from="Monitor/Workshop" to="Monitor/RoomButtons" method="_on_workshop_button_up"]
 [connection signal="button_up" from="Monitor/Props" to="Monitor/RoomButtons" method="_on_props_button_up"]
-[connection signal="mouse_entered" from="TopUI/CamButton" to="OfficeViewControl" method="_on_cam_button_mouse_entered"]
