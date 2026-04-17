@@ -32,8 +32,11 @@ func reset_all_characters():
 	for character in get_tree().get_nodes_in_group("Characters"):
 		character.reset_to_start()
 	print("All characters have been reset to start.")
+	
+	Global.current_AI = Global.AI.duplicate(true)
+	print("Current AI levels are: ", Global.current_AI)
 
 func increase_ai():
 	for character in get_tree().get_nodes_in_group("AIIncreaseCharacters"):
-		Global.AI[character.name][Global.currentNight - 1] += 3
-		print(character, " AI lvl is now ", Global.AI[character.name][Global.currentNight - 1])
+		Global.current_AI[character.name][Global.currentNight - 1] += 3
+	print("AI lvls are now ", Global.current_AI)

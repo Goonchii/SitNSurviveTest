@@ -6,7 +6,7 @@ var AI = {
 	"Freddy": [0,2,3,4,5, 0],
 	"Steven": [0,0,0,0,0, 0]
 }
-
+var current_AI = {}
 var custom_night_index = 5
 
 var  custom_night_AI = {

@@ -8,7 +8,6 @@ var punishment: float = 0
 @onready var steven_office: Sprite2D = get_node("/root/Office/OfficeBack/Steven")
 
 func _ready() -> void:
-	print("Steven AI lvl is ", Global.AI["Steven"][Global.currentNight - 1])
 	steven_office.visible = false
 	$Timer.timeout.connect(timeout)
 	$PunishmentTimer.timeout.connect(punishment_timeout)
@@ -19,7 +18,7 @@ func reset_to_start():
 
 # Movement Opportunity
 func timeout() -> void:
-	if randi_range(1,20) <= Global.AI["Steven"][Global.currentNight - 1]:
+	if randi_range(1,20) <= Global.current_AI["Steven"][Global.currentNight - 1]:
 		# Kill player on next MO if in office
 		if char_position == "office":
 			print("Steven attacks.")

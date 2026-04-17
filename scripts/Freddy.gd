@@ -9,7 +9,6 @@ var char_position = "poobert"
 ## @onready var office_manager = get_node("/root/Office")
 
 func _ready() -> void:
-	print("Freddy AI lvl is ", Global.AI["Freddy"][Global.currentNight - 1])
 	freddy_office.visible = false
 	$Timer.timeout.connect(timeout)
 	$OfficeTimer.timeout.connect(office_timeout)
@@ -20,7 +19,7 @@ func reset_to_start():
 
 # Movement Opportunity
 func timeout() -> void:
-	if randi_range(1,20) <= Global.AI["Freddy"][Global.currentNight - 1]:
+	if randi_range(1,20) <= Global.current_AI["Freddy"][Global.currentNight - 1]:
 		# Kill player on next MO if in right hallway
 		if char_position == "office" && !office_back_layer.visible:
 			print("Freddy attacks.")

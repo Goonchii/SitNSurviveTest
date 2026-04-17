@@ -6,7 +6,6 @@ var char_position = "main"
 ## @onready var office_manager = get_node("/root/Office")
 
 func _ready() -> void:
-	print("Char1 AI lvl is ", Global.AI["Char1"][Global.currentNight - 1])
 	$Timer.timeout.connect(timeout)
 
 func reset_to_start():
@@ -15,7 +14,7 @@ func reset_to_start():
 
 # Movement Opportunity
 func timeout() -> void:
-	if randi_range(1,20) <= Global.AI["Char1"][Global.currentNight - 1]:
+	if randi_range(1,20) <= Global.current_AI["Char1"][Global.currentNight - 1]:
 		# Kill player on next MO if in office
 		if char_position == "office":
 			print("Char1 attacks.")

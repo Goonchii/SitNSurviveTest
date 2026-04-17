@@ -6,7 +6,6 @@ var char_position = "main"
 @onready var char2_office: Sprite2D = get_node("/root/Office/OfficeBack/Char2")
 
 func _ready() -> void:
-	print("Char2 AI lvl is ", Global.AI["Char2"][Global.currentNight - 1])
 	$Timer.timeout.connect(timeout)
 
 func reset_to_start():
@@ -15,7 +14,7 @@ func reset_to_start():
 
 # Movement Opportunity
 func timeout() -> void:
-	if randi_range(1,20) <= Global.AI["Char2"][Global.currentNight - 1]:
+	if randi_range(1,20) <= Global.current_AI["Char2"][Global.currentNight - 1]:
 		# Kill player on next MO if in office
 		if char_position == "office":
 			print("Char2 attacks.")

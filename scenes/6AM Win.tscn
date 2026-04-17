@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://88e6s457a670"]
 
-[ext_resource type="Script" uid="uid://bsn8s27a5c3lf" path="res://scripts/back_to_menu_button.gd" id="1_sk1wu"]
+[ext_resource type="Script" uid="uid://0mdbs0dalybv" path="res://scripts/win_back_to_menu_button.gd" id="1_pojb4"]
 
 [node name="6amWin" type="Node2D"]
 
@@ -17,6 +17,6 @@ offset_top = 309.0
 offset_right = 605.0
 offset_bottom = 424.0
 text = "Back to Menu"
-script = ExtResource("1_sk1wu")
+script = ExtResource("1_pojb4")
 
 [connection signal="pressed" from="Back to Menu Button" to="Back to Menu Button" method="_on_pressed"]
