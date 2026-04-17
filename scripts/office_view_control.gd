@@ -38,6 +38,7 @@ func _on_cam_button_mouse_entered() -> void:
 	if monitor_layer.visible:
 		monitor_layer.hide()
 		view_back.show()
+		freddy.on_turn_back()
 	else:
 		monitor_layer.show()
 		view_back.hide()
