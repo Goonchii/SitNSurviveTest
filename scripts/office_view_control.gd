@@ -12,6 +12,7 @@ func _ready() -> void:
 	facing_front = true
 	view_front.visible = true
 	view_back.visible = false
+	# TODO: something is broken in here after adding keybinds to do with opening cams in button office and it teleports to other office when closed
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Akey"):
